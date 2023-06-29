@@ -12,10 +12,6 @@ var bullet = preload("res://bullet.tscn")
 @onready var animation := $anim as AnimatedSprite2D
 
 var is_jumping := false
-
-func _process(delta):
-	if Input.is_action_just_pressed("shoot") :
-		fire()
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_U):
 		ground = 'u'
@@ -46,7 +42,7 @@ func _physics_process(delta):
 		velocity.x += gravity * delta
 	
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") :
+	if Input.is_action_just_pressed("ui_accept2") :
 		if ground == 'b' and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		if ground == 'u' and is_on_ceiling():
@@ -65,9 +61,12 @@ func _physics_process(delta):
 			is_jumping = false
 		if ground == 'r' and is_on_wall():
 			is_jumping = false
+	#atira
+	if Input.is_action_just_pressed("shoot2") :
+		fire()
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("ui_left2", "ui_right2")
 	if direction != 0:
 		if ground == 'l':
 			velocity.y = direction * SPEED
@@ -102,4 +101,5 @@ func _physics_process(delta):
 func fire():
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.position = get_global_position()
+	bullet_instance.apply_impulse(Vector2(),Vector2(bullet_speed,0).rotated(rotation))
 	get_tree().get_root().call_deferred("add_child",bullet_instance)

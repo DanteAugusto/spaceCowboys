@@ -1,2 +1,6 @@
-extends RigidBody2D
-var bullet_speed = 4000
+extends Area2D
+
+@export var speed = 300
+
+
+

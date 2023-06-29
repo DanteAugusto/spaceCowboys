@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://myan6vgkdhut"]
+[gd_scene load_steps=23 format=3 uid="uid://myan6vgkdhut"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_24wfu"]
 [ext_resource type="Script" path="res://dantebuninha.gd" id="1_n6a3m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://0xvk8oxs64tm" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_1osk7"]
 [ext_resource type="Texture2D" uid="uid://byc8rhp86p344" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Running (32 x 32).png" id="5_iybga"]
 [ext_resource type="Texture2D" uid="uid://bbw0dyx4yoaub" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Jumping (32 x 32).png" id="5_ku1jy"]
+[ext_resource type="Script" path="res://player2.gd" id="8_5jac3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5j24"]
 texture = ExtResource("1_w4y3a")
@@ -191,7 +192,6 @@ position = Vector2(130, 88)
 script = ExtResource("1_24wfu")
 
 [node name="collision" type="CollisionShape2D" parent="player"]
-visible = false
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_jrhql")
 
@@ -207,6 +207,7 @@ frame_progress = 0.323398
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
 position = Vector2(322, 296)
 shape = SubResource("RectangleShape2D_7v0q8")
 
@@ -230,3 +231,19 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 position = Vector2(319, 9)
 shape = SubResource("RectangleShape2D_7v0q8")
+
+[node name="player2" type="CharacterBody2D" parent="."]
+position = Vector2(370, 110)
+script = ExtResource("8_5jac3")
+
+[node name="collision" type="CollisionShape2D" parent="player2"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_jrhql")
+
+[node name="anim" type="AnimatedSprite2D" parent="player2"]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_yv5pn")
+animation = &"idle"
+frame_progress = 0.323398
+
+[node name="animator" type="AnimationPlayer" parent="player2"]

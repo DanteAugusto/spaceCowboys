@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://6vpmpmkv4lxx" path="res://assets/Sprite Pack 2/Sprite Pack 2/8 - Comrade Cheese Puff/Missile (16 x 8).png" id="1_bimyb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyyhi"]
-size = Vector2(8, 4)
+size = Vector2(13.5, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vrd2m"]
 atlas = ExtResource("1_bimyb")
@@ -21,14 +21,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="bullet" type="RigidBody2D"]
+[node name="Area2D" type="Area2D"]
 script = ExtResource("1_22do8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(0.75, 1)
 shape = SubResource("RectangleShape2D_oyyhi")
 
 [node name="missile" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 0)
-scale = Vector2(0.5625, 0.5)
+position = Vector2(1, 1)
+scale = Vector2(1.126, 1)
 sprite_frames = SubResource("SpriteFrames_mnmmx")
