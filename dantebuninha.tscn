@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://myan6vgkdhut"]
+[gd_scene load_steps=22 format=3 uid="uid://myan6vgkdhut"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_24wfu"]
-[ext_resource type="Script" path="res://dantebuninha.gd" id="1_n6a3m"]
 [ext_resource type="Texture2D" uid="uid://dysi4s46ke0o6" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_srhgi"]
 [ext_resource type="Texture2D" uid="uid://bx7xy6fspojjg" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_w4y3a"]
 [ext_resource type="Texture2D" uid="uid://0xvk8oxs64tm" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_1osk7"]
@@ -179,7 +178,6 @@ size = Vector2(644, 18)
 size = Vector2(16, 288)
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_n6a3m")
 
 [node name="level" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1d1vq")

@@ -4,6 +4,11 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+var controls = Input.get_connected_joypads()
+var control = -1
+
+	
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 1000
 var ground = 'b'
@@ -13,9 +18,14 @@ var bullet = preload("res://bullet.tscn")
 
 var is_jumping := false
 
+
+func _ready():
+	if controls.size() > 1:
+		control = controls[0]
 func _process(delta):
 	if Input.is_action_just_pressed("shoot") :
-		fire()
+		if control != -1 && Input.is_joy_button_pressed(control,10):
+			fire()
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_U):
 		ground = 'u'
@@ -46,7 +56,7 @@ func _physics_process(delta):
 		velocity.x += gravity * delta
 	
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") :
+	if control != -1 && Input.is_joy_button_pressed(control, 0) && Input.is_action_just_pressed("ui_accept") :
 		if ground == 'b' and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		if ground == 'u' and is_on_ceiling():
@@ -67,8 +77,15 @@ func _physics_process(delta):
 			is_jumping = false
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction != 0:
+	
+	var direction = 0
+	if control != -1:
+		direction = Input.get_joy_axis(control, 0)
+	#margem de erro porque se não o boneco anda sozinho
+	#if direction != 0:
+	if direction >= 0.05 || direction <= -0.05:
+		#print("controle número ", control)
+		#print(direction)
 		if ground == 'l':
 			velocity.y = direction * SPEED
 		elif ground == 'r':
