@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpcuqw1stt81y"]
+
+[ext_resource type="Script" path="res://scripts/menu_page.gd" id="1_lua3r"]
+[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_v0yk8"]
+[ext_resource type="FontFile" uid="uid://conbt31x0xbxd" path="res://assets/at01.ttf" id="3_akn3k"]
+
+[node name="menu_page" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lua3r")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(160, 91)
+texture = ExtResource("2_v0yk8")
+
+[node name="title" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 16.0
+offset_right = 223.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0.56, 0.178733, 0.028, 1)
+theme_override_fonts/font = ExtResource("3_akn3k")
+theme_override_font_sizes/font_size = 35
+text = "Space
+ Cowboys"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="start_button" type="Button" parent="."]
+offset_left = 56.0
+offset_top = 120.0
+offset_right = 96.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_akn3k")
+text = "START"
+
+[node name="options_button" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 120.0
+offset_right = 152.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_akn3k")
+text = "OPTIONS"
+
+[node name="credits_button" type="Button" parent="."]
+offset_left = 160.0
+offset_top = 120.0
+offset_right = 208.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_akn3k")
+text = "CREDITS"
+
+[node name="exit_button" type="Button" parent="."]
+offset_left = 216.0
+offset_top = 120.0
+offset_right = 256.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("3_akn3k")
+text = "EXIT"
+
+[connection signal="pressed" from="start_button" to="." method="start_game"]
+[connection signal="pressed" from="options_button" to="." method="options_page"]
+[connection signal="pressed" from="credits_button" to="." method="credits_page"]
+[connection signal="pressed" from="exit_button" to="." method="exit_game"]
