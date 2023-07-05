@@ -4,17 +4,16 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-var controls = Input.get_connected_joypads()
-var control = -1
+@onready var controls = Input.get_connected_joypads()
+@onready var control = -1
 
-	
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 1000
 var ground = 'b'
-var bullet_speed = 4000
-var bullet = preload("res://bullet.tscn")
+
 @onready var animation := $anim as AnimatedSprite2D
+
 
 var is_jumping := false
 
@@ -22,10 +21,6 @@ var is_jumping := false
 func _ready():
 	if controls.size() > 1:
 		control = controls[0]
-func _process(delta):
-	if Input.is_action_just_pressed("shoot") :
-		if control != -1 && Input.is_joy_button_pressed(control,10):
-			fire()
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_U):
 		ground = 'u'
@@ -54,9 +49,8 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	if ground == 'r':
 		velocity.x += gravity * delta
-	
 	# Handle Jump.
-	if control != -1 && Input.is_joy_button_pressed(control, 0) && Input.is_action_just_pressed("ui_accept") :
+	if control != -1 && Input.get_joy_axis(control, 5) && Input.is_action_just_pressed("ui_accept") :
 		if ground == 'b' and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		if ground == 'u' and is_on_ceiling():
@@ -75,9 +69,13 @@ func _physics_process(delta):
 			is_jumping = false
 		if ground == 'r' and is_on_wall():
 			is_jumping = false
+	
+	#rotacionar
+	#var batata = Vector2(Input.get_joy_axis(control, JOY_AXIS_RIGHT_X), Input.get_joy_axis(control, JOY_AXIS_RIGHT_Y))
+	#var angle = batata.angle()
+	#rotation = angle
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	
 	var direction = 0
 	if control != -1:
 		direction = Input.get_joy_axis(control, 0)
@@ -116,7 +114,4 @@ func _physics_process(delta):
 		else:
 			animation.play("idle")
 	move_and_slide()
-func fire():
-	var bullet_instance = bullet.instantiate()
-	bullet_instance.position = get_global_position()
-	get_tree().get_root().call_deferred("add_child",bullet_instance)
+
