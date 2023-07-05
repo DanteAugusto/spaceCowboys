@@ -6,7 +6,7 @@ func start_game():
 
 # Goes to the options page
 func options_page():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/options_menu.tscn")
 
 # Goes to the credits page
 func credits_page():
