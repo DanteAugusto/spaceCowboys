@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvaw6hkhfjcu4"]
+
+[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="1_qs1la"]
+[ext_resource type="FontFile" uid="uid://conbt31x0xbxd" path="res://assets/at01.ttf" id="2_t27kk"]
+
+[node name="selection_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(320, 160)
+scale = Vector2(2, 1.77778)
+texture = ExtResource("1_qs1la")
+
+[node name="panel" type="PanelContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 608.0
+offset_bottom = 288.0
+
+[node name="title" type="Label" parent="panel"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0.560784, 0.180392, 0.027451, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 40
+text = "Select your players"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="panel"]
