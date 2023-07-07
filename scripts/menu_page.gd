@@ -2,7 +2,7 @@ extends Control
 
 # Goes to introduction page
 func start_game():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://scenes/selection_menu.tscn")
 
 # Goes to the options page
 func options_page():

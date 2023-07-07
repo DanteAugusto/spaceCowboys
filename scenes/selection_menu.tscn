@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvaw6hkhfjcu4"]
+[gd_scene load_steps=10 format=3 uid="uid://bvaw6hkhfjcu4"]
 
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="1_qs1la"]
+[ext_resource type="Script" path="res://scripts/selection.gd" id="2_1lrxc"]
 [ext_resource type="FontFile" uid="uid://conbt31x0xbxd" path="res://assets/at01.ttf" id="2_t27kk"]
+[ext_resource type="Texture2D" uid="uid://hiwsvgg716uy" path="res://assets/Cowboys Sprite/Mr.Mochi/Mr.Mochi - Idle.png" id="3_6a50m"]
+[ext_resource type="Texture2D" uid="uid://dl4flkm8dpn4u" path="res://assets/select-1.png" id="4_2gxy8"]
+[ext_resource type="Texture2D" uid="uid://d0sap7epa0ofl" path="res://assets/Cowboys Sprite/Onion/Onion - Idle.png" id="4_747jy"]
+[ext_resource type="Texture2D" uid="uid://0jtbdc0pvo4u" path="res://assets/Cowboys Sprite/Robo Pumpkin/Robo Pumpkin - Idle.png" id="5_hctiu"]
+[ext_resource type="Texture2D" uid="uid://clwmcxogy6pkt" path="res://assets/select-2.png" id="5_ir3fv"]
+[ext_resource type="Texture2D" uid="uid://dyv6a54kwtmwk" path="res://assets/Cowboys Sprite/Robo Totem/Robo Totem - Idle.png" id="6_p0l2j"]
 
 [node name="selection_menu" type="Control"]
 layout_mode = 3
@@ -17,10 +24,12 @@ scale = Vector2(2, 1.77778)
 texture = ExtResource("1_qs1la")
 
 [node name="panel" type="PanelContainer" parent="."]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
 offset_right = 608.0
 offset_bottom = 288.0
+script = ExtResource("2_1lrxc")
 
 [node name="title" type="Label" parent="panel"]
 layout_mode = 2
@@ -32,4 +41,193 @@ theme_override_font_sizes/font_size = 40
 text = "Select your players"
 horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="panel"]
+[node name="mrmochi" type="Sprite2D" parent="panel"]
+position = Vector2(64, 152)
+scale = Vector2(2.78261, 2.90909)
+texture = ExtResource("3_6a50m")
+region_enabled = true
+region_rect = Rect2(4.14091, 10.4357, 23.3457, 22.1586)
+
+[node name="p1" type="TextureRect" parent="panel/mrmochi"]
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 15.0
+offset_bottom = 16.0
+texture = ExtResource("4_2gxy8")
+
+[node name="label" type="Label" parent="panel/mrmochi/p1"]
+offset_left = 2.64063
+offset_top = -8.0
+offset_right = 25.6406
+offset_bottom = 3.0
+theme_override_colors/font_color = Color(0.247059, 0.317647, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 7
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2" type="TextureRect" parent="panel/mrmochi"]
+visible = false
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 15.0
+offset_bottom = 16.0
+texture = ExtResource("5_ir3fv")
+
+[node name="label" type="Label" parent="panel/mrmochi/p2"]
+offset_left = 2.5
+offset_top = 26.375
+offset_right = 25.5
+offset_bottom = 37.375
+theme_override_colors/font_color = Color(1, 0.337255, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 7
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="onion" type="Sprite2D" parent="panel"]
+position = Vector2(192, 160)
+scale = Vector2(4, 3.36842)
+texture = ExtResource("4_747jy")
+region_enabled = true
+region_rect = Rect2(-0.0254517, -0.223055, 16.2233, 19.9823)
+
+[node name="p1" type="TextureRect" parent="panel/onion"]
+visible = false
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = 12.0
+texture = ExtResource("4_2gxy8")
+
+[node name="label" type="Label" parent="panel/onion/p1"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -6.70313
+offset_right = 18.0
+offset_bottom = 2.29688
+theme_override_colors/font_color = Color(0.247059, 0.317647, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 6
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2" type="TextureRect" parent="panel/onion"]
+visible = false
+offset_left = -10.0
+offset_top = -12.0
+offset_right = 10.0
+offset_bottom = 12.0
+texture = ExtResource("5_ir3fv")
+
+[node name="label" type="Label" parent="panel/onion/p2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 21.2031
+offset_right = 18.0
+offset_bottom = 31.2031
+theme_override_colors/font_color = Color(1, 0.337255, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 6
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="robo_pumpkin" type="Sprite2D" parent="panel"]
+position = Vector2(320, 160)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("5_hctiu")
+region_rect = Rect2(20.2291, 21.9052, 1.21617, 2.43235)
+
+[node name="p1" type="TextureRect" parent="panel/robo_pumpkin"]
+visible = false
+offset_left = -11.0
+offset_top = -15.0
+offset_right = 11.0
+offset_bottom = 13.0
+texture = ExtResource("4_2gxy8")
+
+[node name="label" type="Label" parent="panel/robo_pumpkin/p1"]
+layout_mode = 0
+offset_left = 0.999992
+offset_top = -7.1875
+offset_right = 21.0
+offset_bottom = 2.8125
+theme_override_colors/font_color = Color(0.247059, 0.317647, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 7
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2" type="TextureRect" parent="panel/robo_pumpkin"]
+visible = false
+offset_left = -11.0
+offset_top = -15.0
+offset_right = 11.0
+offset_bottom = 13.0
+texture = ExtResource("5_ir3fv")
+
+[node name="Label" type="Label" parent="panel/robo_pumpkin/p2"]
+layout_mode = 0
+offset_left = 0.999992
+offset_top = 24.6875
+offset_right = 21.0
+offset_bottom = 34.6875
+theme_override_colors/font_color = Color(1, 0.337255, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 7
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="robo_totem" type="Sprite2D" parent="panel"]
+position = Vector2(448, 139.273)
+scale = Vector2(3.2, 2.70455)
+texture = ExtResource("6_p0l2j")
+region_rect = Rect2(4.14091, 10.4357, 23.3457, 22.1586)
+
+[node name="p1" type="TextureRect" parent="panel/robo_totem"]
+visible = false
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 10.0
+offset_bottom = 22.0
+texture = ExtResource("4_2gxy8")
+
+[node name="label" type="Label" parent="panel/robo_totem/p1"]
+layout_mode = 0
+offset_top = -8.5042
+offset_right = 20.0
+offset_bottom = 3.4958
+theme_override_colors/font_color = Color(0.247059, 0.317647, 0.709804, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 7
+text = "Player 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="p2" type="TextureRect" parent="panel/robo_totem"]
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 10.0
+offset_bottom = 22.0
+texture = ExtResource("5_ir3fv")
+
+[node name="Label" type="Label" parent="panel/robo_totem/p2"]
+layout_mode = 0
+offset_top = 33.6471
+offset_right = 20.0
+offset_bottom = 45.6471
+theme_override_colors/font_color = Color(1, 0.337255, 0.133333, 1)
+theme_override_fonts/font = ExtResource("2_t27kk")
+theme_override_font_sizes/font_size = 7
+text = "Player 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="p1_ready" from="panel" to="panel" method="go_to_next_scene"]
+[connection signal="p2_ready" from="panel" to="panel" method="go_to_next_scene"]
