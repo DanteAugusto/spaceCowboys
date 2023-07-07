@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://dthd154l0j342"]
+
+[ext_resource type="Texture2D" uid="uid://dmjdmyjdkbqbk" path="res://assets/Cowboys Sprite/Robo Pumpkin/Robo Pumpkin - Hurt.png" id="1_rd2on"]
+[ext_resource type="Texture2D" uid="uid://0jtbdc0pvo4u" path="res://assets/Cowboys Sprite/Robo Pumpkin/Robo Pumpkin - Idle.png" id="2_qkb2h"]
+[ext_resource type="Texture2D" uid="uid://ckl77tpgh5e67" path="res://assets/Cowboys Sprite/Robo Pumpkin/Robo Pumpkin - Running.png" id="3_14ohh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m67ov"]
+atlas = ExtResource("1_rd2on")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pohq"]
+atlas = ExtResource("2_qkb2h")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8qbr"]
+atlas = ExtResource("2_qkb2h")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrhch"]
+atlas = ExtResource("3_14ohh")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sipue"]
+atlas = ExtResource("3_14ohh")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66nkp"]
+atlas = ExtResource("3_14ohh")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_028s2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m67ov")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_5pohq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8qbr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrhch")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sipue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66nkp")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[node name="robo_pumpkin" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_028s2")
+animation = &"jumping"
+autoplay = "idle"
+flip_h = true

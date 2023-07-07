@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://c8dfrje250c5k"]
+
+[ext_resource type="Texture2D" uid="uid://b6t85j26i3qur" path="res://assets/Cowboys Sprite/Mr.Mochi/Mr.Mochi - Hurt.png" id="1_iuswj"]
+[ext_resource type="Texture2D" uid="uid://hiwsvgg716uy" path="res://assets/Cowboys Sprite/Mr.Mochi/Mr.Mochi - Idle.png" id="2_0i644"]
+[ext_resource type="Texture2D" uid="uid://c2ytb1y6jgl6s" path="res://assets/Cowboys Sprite/Mr.Mochi/Mr.Mochi - Jumpping.png" id="3_vmrrs"]
+[ext_resource type="Texture2D" uid="uid://emr8i5swfj0p" path="res://assets/Cowboys Sprite/Mr.Mochi/Mr.Mochi - Running.png" id="4_vls5t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2n0t"]
+atlas = ExtResource("1_iuswj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rydff"]
+atlas = ExtResource("2_0i644")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ctwo"]
+atlas = ExtResource("2_0i644")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bojrm"]
+atlas = ExtResource("3_vmrrs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_086r6"]
+atlas = ExtResource("4_vls5t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jektg"]
+atlas = ExtResource("4_vls5t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpwub"]
+atlas = ExtResource("4_vls5t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn3jy"]
+atlas = ExtResource("4_vls5t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_31f6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2n0t")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_rydff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ctwo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bojrm")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_086r6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jektg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpwub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn3jy")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[node name="mr_mochi" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_31f6g")
+animation = &"idle"
+autoplay = "idle"

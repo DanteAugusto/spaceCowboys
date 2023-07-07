@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://buct2gkqc6o6f"]
+
+[ext_resource type="Texture2D" uid="uid://dngkqwvyukf3j" path="res://assets/Cowboys Sprite/Onion/Onion - Hurt.png" id="1_chpms"]
+[ext_resource type="Texture2D" uid="uid://d0sap7epa0ofl" path="res://assets/Cowboys Sprite/Onion/Onion - Idle.png" id="2_3o8ac"]
+[ext_resource type="Texture2D" uid="uid://dja6lu4dsvrdn" path="res://assets/Cowboys Sprite/Onion/Onion - Run_&_Jump.png" id="3_qwnh2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhkrf"]
+atlas = ExtResource("1_chpms")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anil6"]
+atlas = ExtResource("2_3o8ac")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sryv4"]
+atlas = ExtResource("2_3o8ac")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohvum"]
+atlas = ExtResource("3_qwnh2")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmfau"]
+atlas = ExtResource("3_qwnh2")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he8lu"]
+atlas = ExtResource("3_qwnh2")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n67qo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhkrf")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_anil6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sryv4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohvum")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmfau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he8lu")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[node name="onion" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_n67qo")
+animation = &"jumping"
+autoplay = "idle"
