@@ -17,8 +17,12 @@ var is_jumping := false
 
 
 func _ready():
+	controls = Input.get_connected_joypads()
 	if controls.size() > 1:
+		print(controls.size())
 		control = controls[1]
+	else:
+		print(controls.size())
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_U):
 		ground = 'u'

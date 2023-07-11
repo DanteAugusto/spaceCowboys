@@ -9,7 +9,7 @@ var bullet_speed = 4000
 var bullet = preload("res://bullet.tscn")
 
 func _ready():
-	if controls.size() > 1:
+	if controls.size() >= 1:
 		control = controls[0]
 		
 

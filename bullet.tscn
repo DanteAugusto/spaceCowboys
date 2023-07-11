@@ -22,12 +22,20 @@ animations = [{
 }]
 
 [node name="Area2D" type="Area2D"]
+light_mask = 7
+visibility_layer = 7
 script = ExtResource("1_22do8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 7
+visibility_layer = 7
 shape = SubResource("RectangleShape2D_oyyhi")
 
 [node name="missile" type="AnimatedSprite2D" parent="."]
+light_mask = 7
+visibility_layer = 7
 rotation = 1.5708
 scale = Vector2(1.126, 1)
 sprite_frames = SubResource("SpriteFrames_mnmmx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

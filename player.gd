@@ -19,7 +19,7 @@ var is_jumping := false
 
 
 func _ready():
-	if controls.size() > 1:
+	if controls.size() >= 1:
 		control = controls[0]
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_U):
