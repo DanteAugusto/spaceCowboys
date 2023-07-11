@@ -21,7 +21,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" groups=["bullets"]]
 light_mask = 7
 visibility_layer = 7
 script = ExtResource("1_22do8")
