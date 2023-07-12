@@ -16,6 +16,8 @@ var ground = 'b'
 
 
 var is_jumping := false
+var health = 3
+var knockback_vector := Vector2.ZERO
 
 
 func _ready():
@@ -113,5 +115,19 @@ func _physics_process(delta):
 			animation.play("jump")
 		else:
 			animation.play("idle")
+			
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector
+	
 	move_and_slide()
 
+func take_damage(damage := 0, knockback_force := Vector2.ZERO, duration := 0.25):
+	health -= damage
+	
+	if knockback_force != Vector2.ZERO:
+		knockback_vector = knockback_force
+		
+		var knockback_tween := get_tree().create_tween()
+		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+		animation.modulate = Color(1, 0, 0, 1)
+		knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
