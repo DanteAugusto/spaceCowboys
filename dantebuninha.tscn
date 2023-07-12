@@ -384,3 +384,7 @@ script = ExtResource("1_24wfu")
 [node name="player2" parent="." instance=ExtResource("7_1tn8v")]
 position = Vector2(371, 115)
 script = ExtResource("8_5jac3")
+
+[connection signal="round_ended" from="." to="." method="_on_round_ended"]
+[connection signal="is_dead" from="player" to="." method="_on_player_is_dead"]
+[connection signal="is_dead" from="player2" to="." method="_on_player_2_is_dead"]

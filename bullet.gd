@@ -2,11 +2,15 @@ extends Area2D
 
 @export var speed = 300
 
+@onready var wall_detector := $wall_detector as RayCast2D
 var movement_vector := Vector2(0,-1)
 
 # Faz a movimentação da bala
 func _physics_process(delta):
 	global_position += movement_vector.rotated(rotation) * speed * delta
+	
+	if wall_detector.is_colliding():
+		queue_free()
 	
 
 

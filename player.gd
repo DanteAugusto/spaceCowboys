@@ -19,6 +19,8 @@ var is_jumping := false
 var health = 3
 var knockback_vector := Vector2.ZERO
 
+signal is_dead
+
 
 func _ready():
 	if controls.size() >= 1:
@@ -131,3 +133,6 @@ func take_damage(damage := 0, knockback_force := Vector2.ZERO, duration := 0.25)
 		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
 		animation.modulate = Color(1, 0, 0, 1)
 		knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
+	
+	if(health <= 0):
+		is_dead.emit()

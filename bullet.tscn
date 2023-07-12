@@ -38,4 +38,10 @@ rotation = 1.5708
 scale = Vector2(1.126, 1)
 sprite_frames = SubResource("SpriteFrames_mnmmx")
 
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+scale = Vector2(-1.07603, 1.02612)
+target_position = Vector2(0, -11.6945)
+collision_mask = 2
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
