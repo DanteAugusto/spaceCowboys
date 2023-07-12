@@ -13,9 +13,6 @@ func _physics_process(delta):
 		queue_free()
 	
 
-
-
-# TODO: Sumir quando atirar numa parede
 # Faz a bala sumir quando bater em algum obstáculo
 func _on_body_entered(body):
 	if body.is_in_group("players"):
