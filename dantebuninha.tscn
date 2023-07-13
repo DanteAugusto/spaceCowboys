@@ -1,12 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://myan6vgkdhut"]
+[gd_scene load_steps=15 format=3 uid="uid://myan6vgkdhut"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_24wfu"]
 [ext_resource type="Script" path="res://dantebuninha.gd" id="1_304kp"]
 [ext_resource type="Texture2D" uid="uid://bx7xy6fspojjg" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_w4y3a"]
 [ext_resource type="Texture2D" uid="uid://0xvk8oxs64tm" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_1osk7"]
 [ext_resource type="PackedScene" uid="uid://csdtlhv63jllu" path="res://player.tscn" id="7_1tn8v"]
 [ext_resource type="Script" path="res://gun.gd" id="7_l1bbn"]
-[ext_resource type="Script" path="res://player2.gd" id="8_5jac3"]
 [ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="8_8diu1"]
 [ext_resource type="Script" path="res://gun2.gd" id="10_o080v"]
 
@@ -379,12 +377,13 @@ scale = Vector2(0.25, 0.25)
 
 [node name="player" parent="." instance=ExtResource("7_1tn8v")]
 position = Vector2(128, 93)
-script = ExtResource("1_24wfu")
 
 [node name="player2" parent="." instance=ExtResource("7_1tn8v")]
 position = Vector2(371, 115)
-script = ExtResource("8_5jac3")
+
+[node name="timer" type="Timer" parent="."]
 
 [connection signal="round_ended" from="." to="." method="_on_round_ended"]
 [connection signal="is_dead" from="player" to="." method="_on_player_is_dead"]
 [connection signal="is_dead" from="player2" to="." method="_on_player_2_is_dead"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

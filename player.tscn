@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://csdtlhv63jllu"]
+[gd_scene load_steps=14 format=3 uid="uid://csdtlhv63jllu"]
 
+[ext_resource type="Script" path="res://player.gd" id="1_awrkr"]
 [ext_resource type="Texture2D" uid="uid://dysi4s46ke0o6" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_ne66x"]
 [ext_resource type="Texture2D" uid="uid://bbw0dyx4yoaub" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Jumping (32 x 32).png" id="2_1mlp1"]
 [ext_resource type="Texture2D" uid="uid://byc8rhp86p344" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Running (32 x 32).png" id="3_8sfuy"]
@@ -77,6 +78,7 @@ animations = [{
 [node name="player" type="CharacterBody2D" groups=["players"]]
 position = Vector2(0, -6)
 collision_mask = 22
+script = ExtResource("1_awrkr")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, -2)
@@ -86,3 +88,5 @@ shape = SubResource("RectangleShape2D_4p8cq")
 position = Vector2(1, -10)
 sprite_frames = SubResource("SpriteFrames_v7htg")
 animation = &"jump"
+
+[connection signal="took_damage" from="." to="." method="_on_took_damage"]

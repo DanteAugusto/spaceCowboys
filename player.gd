@@ -14,34 +14,22 @@ var ground = 'b'
 
 @onready var animation := $anim as AnimatedSprite2D
 
-
+var curr_player := 0
 var is_jumping := false
-var health = 3
+var immune := false
+var health := 3
 var knockback_vector := Vector2.ZERO
 
 signal is_dead
+signal took_damage
 
 
-func _ready():
-	if controls.size() >= 1:
-		control = controls[0]
+func initialize(n_player):
+	curr_player = n_player
+	if controls.size() > n_player:
+		control = controls[n_player]
+	
 func _physics_process(delta):
-	if Input.is_key_pressed(KEY_U):
-		ground = 'u'
-		set_global_rotation(PI)
-		#print("para cima")
-	if Input.is_key_pressed(KEY_L):
-		ground = 'l'
-		set_global_rotation(PI/2)
-		#print("para esquerda")
-	if Input.is_key_pressed(KEY_B):
-		ground = 'b'
-		set_global_rotation(0)
-		#print("para baixo")
-	if Input.is_key_pressed(KEY_R):
-		ground = 'r'
-		set_global_rotation(3*PI/2)
-		#print("para direita")
 	# Add the gravity.
 	#if not is_on_floor():
 	if ground == 'u':
@@ -124,15 +112,27 @@ func _physics_process(delta):
 	move_and_slide()
 
 func take_damage(damage := 0, knockback_force := Vector2.ZERO, duration := 0.25):
-	health -= damage
-	
-	if knockback_force != Vector2.ZERO:
-		knockback_vector = knockback_force
+	if !immune:
+		took_damage.emit()
+		health -= damage
 		
-		var knockback_tween := get_tree().create_tween()
-		knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-		animation.modulate = Color(1, 0, 0, 1)
-		knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
-	
-	if(health <= 0):
-		is_dead.emit()
+		if knockback_force != Vector2.ZERO:
+			knockback_vector = knockback_force
+			
+			var knockback_tween := get_tree().create_tween()
+			knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
+			animation.modulate = Color(1, 0, 0, 1)
+			knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
+		
+		if(health <= 0):
+			
+			is_dead.emit()
+
+
+
+func _on_took_damage():
+	immune = true
+	#animation.modulate = Color(1, 0, 0, 1)
+	await get_tree().create_timer(1).timeout
+	#animation.modulate = Color(1, 0, 0, 1)
+	immune = false
