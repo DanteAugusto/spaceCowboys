@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://csdtlhv63jllu"]
+[gd_scene load_steps=24 format=3 uid="uid://csdtlhv63jllu"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_awrkr"]
 [ext_resource type="Texture2D" uid="uid://dysi4s46ke0o6" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_ne66x"]
@@ -6,7 +6,86 @@
 [ext_resource type="Texture2D" uid="uid://byc8rhp86p344" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Running (32 x 32).png" id="3_8sfuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p8cq"]
-size = Vector2(18, 16)
+size = Vector2(15, 16)
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_hc8bf"]
+parameter_name = "tint"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeBooleanParameter" id="VisualShaderNodeBooleanParameter_th0vh"]
+parameter_name = "enabled"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeIf" id="VisualShaderNodeIf_rwbql"]
+default_input_values = [0, 0.0, 1, 1.0, 2, 1e-05, 3, Vector3(0, 0, 0), 4, Vector3(0, 0, 0), 5, Vector3(0, 0, 0)]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ovyh7"]
+input_name = "color"
+
+[sub_resource type="VisualShader" id="VisualShader_nibqj"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform bool enabled = false;
+uniform vec4 tint : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+
+
+
+void fragment() {
+// BooleanParameter:3
+	bool n_out3p0 = enabled;
+
+
+// ColorParameter:2
+	vec4 n_out2p0 = tint;
+
+
+// Input:5
+	vec4 n_out5p0 = COLOR;
+
+
+	vec3 n_out4p0;
+// If:4
+	float n_in4p1 = 1.00000;
+	float n_in4p2 = 0.00001;
+	if(abs((n_out3p0 ? 1.0 : 0.0) - n_in4p1) < n_in4p2)
+	{
+		n_out4p0 = vec3(n_out2p0.xyz);
+	}
+	else if((n_out3p0 ? 1.0 : 0.0) < n_in4p1)
+	{
+		n_out4p0 = vec3(n_out5p0.xyz);
+	}
+	else
+	{
+		n_out4p0 = vec3(n_out5p0.xyz);
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out4p0;
+
+
+}
+"
+graph_offset = Vector2(-323.704, 88.7175)
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_hc8bf")
+nodes/fragment/2/position = Vector2(-300, 260)
+nodes/fragment/3/node = SubResource("VisualShaderNodeBooleanParameter_th0vh")
+nodes/fragment/3/position = Vector2(-160, 20)
+nodes/fragment/4/node = SubResource("VisualShaderNodeIf_rwbql")
+nodes/fragment/4/position = Vector2(200, 40)
+nodes/fragment/5/node = SubResource("VisualShaderNodeInput_ovyh7")
+nodes/fragment/5/position = Vector2(-360, 540)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 2, 0, 4, 3, 4, 0, 0, 0, 5, 0, 4, 4, 5, 0, 4, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sked"]
+resource_local_to_scene = true
+shader = SubResource("VisualShader_nibqj")
+shader_parameter/enabled = false
+shader_parameter/tint = Color(1, 1, 1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5mkai"]
 atlas = ExtResource("1_ne66x")
@@ -75,18 +154,93 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_n7n51"]
+resource_name = "hit_flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim:material:shader_parameter/enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_qnyee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_figqr"]
+resource_name = "hurtBlink"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("anim/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.501961), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_smx58"]
+_data = {
+"RESET": SubResource("Animation_qnyee"),
+"hit_flash": SubResource("Animation_n7n51"),
+"hurtBlink": SubResource("Animation_figqr")
+}
+
 [node name="player" type="CharacterBody2D" groups=["players"]]
 position = Vector2(0, -6)
 collision_mask = 22
 script = ExtResource("1_awrkr")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(1, -2)
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_4p8cq")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
+clip_children = 2
+material = SubResource("ShaderMaterial_8sked")
 position = Vector2(1, -10)
 sprite_frames = SubResource("SpriteFrames_v7htg")
 animation = &"jump"
 
+[node name="ColorRect" type="ColorRect" parent="anim"]
+offset_left = -21.0
+offset_top = -14.0
+offset_right = 18.0
+offset_bottom = 28.0
+color = Color(1, 0, 0, 0)
+
+[node name="fallNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, -2)
+scale = Vector2(0.75, 0.8)
+
+[node name="Effects" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_smx58")
+}
+
 [connection signal="took_damage" from="." to="." method="_on_took_damage"]
+[connection signal="screen_exited" from="fallNotifier" to="." method="_on_fall_notifier_screen_exited"]

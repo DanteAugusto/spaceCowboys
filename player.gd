@@ -8,16 +8,20 @@ const JUMP_VELOCITY = -400.0
 @onready var control = -1
 
 
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 1000
 var ground = 'b'
 
 @onready var animation := $anim as AnimatedSprite2D
+@onready var effects = $Effects
 
+var MAX_HEALTH = 3
+var IMMUNE_TIME = 1
 var curr_player := 0
 var is_jumping := false
 var immune := false
-var health := 3
+var health = MAX_HEALTH
 var knockback_vector := Vector2.ZERO
 
 signal is_dead
@@ -42,7 +46,7 @@ func _physics_process(delta):
 	if ground == 'r':
 		velocity.x += gravity * delta
 	# Handle Jump.
-	if control != -1 && Input.get_joy_axis(control, 5) && Input.is_action_just_pressed("ui_accept") :
+	if control != -1 && Input.get_joy_axis(control, 4) && Input.is_action_just_pressed("ui_accept") :
 		if ground == 'b' and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		if ground == 'u' and is_on_ceiling():
@@ -121,8 +125,8 @@ func take_damage(damage := 0, knockback_force := Vector2.ZERO, duration := 0.25)
 			
 			var knockback_tween := get_tree().create_tween()
 			knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, duration)
-			animation.modulate = Color(1, 0, 0, 1)
-			knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
+			# animation.modulate = Color(1, 0, 0, 1)
+			# knockback_tween.parallel().tween_property(animation, "modulate", Color(1,1,1,1), duration)
 		
 		if(health <= 0):
 			
@@ -132,7 +136,12 @@ func take_damage(damage := 0, knockback_force := Vector2.ZERO, duration := 0.25)
 
 func _on_took_damage():
 	immune = true
-	#animation.modulate = Color(1, 0, 0, 1)
-	await get_tree().create_timer(1).timeout
-	#animation.modulate = Color(1, 0, 0, 1)
+	effects.play("hurtBlink")
+	await get_tree().create_timer(IMMUNE_TIME).timeout
+	effects.play("RESET")
 	immune = false
+
+
+
+func _on_fall_notifier_screen_exited():
+	take_damage(MAX_HEALTH)
