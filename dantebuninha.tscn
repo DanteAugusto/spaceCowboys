@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://myan6vgkdhut"]
+[gd_scene load_steps=16 format=3 uid="uid://myan6vgkdhut"]
 
 [ext_resource type="Script" path="res://dantebuninha.gd" id="1_304kp"]
 [ext_resource type="Texture2D" uid="uid://bx7xy6fspojjg" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_w4y3a"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://csdtlhv63jllu" path="res://player.tscn" id="7_1tn8v"]
 [ext_resource type="Script" path="res://gun.gd" id="7_l1bbn"]
 [ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="8_8diu1"]
+[ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="8_um4hm"]
 [ext_resource type="Script" path="res://gun2.gd" id="10_o080v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5j24"]
@@ -382,6 +383,9 @@ position = Vector2(127, 77)
 position = Vector2(371, 115)
 
 [node name="timer" type="Timer" parent="."]
+
+[node name="cactus" parent="." instance=ExtResource("8_um4hm")]
+position = Vector2(478, 129)
 
 [connection signal="round_ended" from="." to="." method="_on_round_ended"]
 [connection signal="is_dead" from="player" to="." method="_on_player_is_dead"]

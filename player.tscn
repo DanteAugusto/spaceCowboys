@@ -224,7 +224,7 @@ clip_children = 2
 material = SubResource("ShaderMaterial_8sked")
 position = Vector2(1, -10)
 sprite_frames = SubResource("SpriteFrames_v7htg")
-animation = &"jump"
+animation = &"run"
 
 [node name="ColorRect" type="ColorRect" parent="anim"]
 offset_left = -21.0

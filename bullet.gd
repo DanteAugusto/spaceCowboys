@@ -24,5 +24,4 @@ func _on_body_entered(body):
 
 
 func _on_visible_notifier_screen_exited():
-	print("EEEEEEEEEEEEEEEEEEEEE")
 	queue_free()
