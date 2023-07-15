@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 100.0
+const JUMP_VELOCITY = -100.0
 
 @onready var controls = Input.get_connected_joypads()
 @onready var control = -1
@@ -10,7 +10,7 @@ const JUMP_VELOCITY = -400.0
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 1000
+var gravity = 100
 var ground = 'b'
 
 @onready var animation := $anim as AnimatedSprite2D

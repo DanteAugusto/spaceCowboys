@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed = 300
+@export var speed = 100
 
 @onready var wall_detector := $wall_detector as RayCast2D
 

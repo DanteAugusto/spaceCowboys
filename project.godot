@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="antigravity"
-run/main_scene="res://dantebuninha.tscn"
+run/main_scene="res://levels/level1.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,8 +21,10 @@ Global="*res://Global/global.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=320
+window/size/viewport_width=672
+window/size/viewport_height=368
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [input]
