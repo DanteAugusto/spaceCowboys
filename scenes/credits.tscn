@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxxv6yp64xvyh"]
+
+[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="1_74200"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_lvfe0"]
+[ext_resource type="FontFile" uid="uid://conbt31x0xbxd" path="res://assets/at01.ttf" id="3_b5ptf"]
+[ext_resource type="Texture2D" uid="uid://cvawaxywd3w20" path="res://assets/button_back.png" id="4_beuxo"]
+
+[node name="credits" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lvfe0")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(320, 160)
+scale = Vector2(2, 1.77778)
+texture = ExtResource("1_74200")
+
+[node name="panel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 576.0
+offset_bottom = 296.0
+
+[node name="title" type="Label" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 576.0
+offset_bottom = 67.0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0.560784, 0.180392, 0.027451, 1)
+theme_override_fonts/font = ExtResource("3_b5ptf")
+theme_override_font_sizes/font_size = 40
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="text_area" type="Label" parent="."]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 576.0
+offset_bottom = 256.0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.878431, 0.282353, 0.0431373, 1)
+theme_override_colors/font_shadow_color = Color(0.560784, 0.180392, 0.027451, 1)
+theme_override_fonts/font = ExtResource("3_b5ptf")
+theme_override_font_sizes/font_size = 20
+text = "Designs
+- Beatriz Gouveia
+
+Mechanics
+- Dante Augusto
+- Henrique Fouquet
+- Joao Calafange
+
+Sonography
+- Deborah Dantas"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 248.0
+offset_right = 560.0
+offset_bottom = 280.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b5ptf")
+theme_override_font_sizes/font_size = 25
+text = "Back
+"
+flat = true
+
+[node name="back_icon" type="Sprite2D" parent="back_button"]
+show_behind_parent = true
+position = Vector2(-8, -18)
+scale = Vector2(4, 3.65)
+texture = ExtResource("4_beuxo")
+centered = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qxr3j0b5q5g"]
+[gd_scene load_steps=5 format=3 uid="uid://qxr3j0b5q5g"]
 
+[ext_resource type="Script" path="res://scripts/options_menu.gd" id="1_1uwn2"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="1_3vk84"]
-[ext_resource type="Script" path="res://options_menu.gd" id="1_7ctik"]
 [ext_resource type="FontFile" uid="uid://conbt31x0xbxd" path="res://assets/at01.ttf" id="2_mguth"]
+[ext_resource type="Texture2D" uid="uid://cvawaxywd3w20" path="res://assets/button_back.png" id="4_hvcui"]
 
 [node name="options_menu" type="Control"]
 layout_mode = 3
@@ -11,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7ctik")
+script = ExtResource("1_1uwn2")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(320, 160)
@@ -63,14 +64,28 @@ theme_override_font_sizes/font_size = 15
 text = "0"
 horizontal_alignment = 2
 
-[node name="back_button" type="Button" parent="panel/VBoxContainer"]
-custom_minimum_size = Vector2(75, 30)
+[node name="back_button2" type="Button" parent="panel/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_mguth")
-theme_override_font_sizes/font_size = 27
-text = "Back  "
-alignment = 2
+theme_override_font_sizes/font_size = 25
+text = "Back
+"
+flat = true
+
+[node name="back_icon" type="Sprite2D" parent="panel/VBoxContainer/back_button2"]
+show_behind_parent = true
+position = Vector2(-24, -19)
+scale = Vector2(4, 3.65)
+texture = ExtResource("4_hvcui")
+centered = false
 
 [connection signal="value_changed" from="panel/VBoxContainer/HSlider" to="." method="adjust_volume"]
-[connection signal="pressed" from="panel/VBoxContainer/back_button" to="." method="go_back"]

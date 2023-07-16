@@ -142,7 +142,8 @@ vertical_alignment = 1
 position = Vector2(320, 160)
 scale = Vector2(3.2, 3.2)
 texture = ExtResource("5_hctiu")
-region_rect = Rect2(20.2291, 21.9052, 1.21617, 2.43235)
+region_enabled = true
+region_rect = Rect2(0.0338631, 4.93282, 15.9661, 20.602)
 
 [node name="p1" type="TextureRect" parent="panel/robo_pumpkin"]
 visible = false
@@ -190,7 +191,8 @@ vertical_alignment = 1
 position = Vector2(448, 139.273)
 scale = Vector2(3.2, 2.70455)
 texture = ExtResource("6_p0l2j")
-region_rect = Rect2(4.14091, 10.4357, 23.3457, 22.1586)
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
 
 [node name="p1" type="TextureRect" parent="panel/robo_totem"]
 visible = false
