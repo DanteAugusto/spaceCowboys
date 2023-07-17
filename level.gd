@@ -44,8 +44,7 @@ func _on_player_2_is_dead():
 	round_ended.emit()
 
 
-# TODO: Mudar para outro mapa
-# TODO: Verif
+# Anuncia o fim da rodada, e troca para o próximo mapa
 func _on_round_ended():
 	if(!is_round_finished):
 		is_round_finished = true
@@ -60,8 +59,8 @@ func _on_round_ended():
 			print("Ninguém?")
 		print("Indo para a proxima partida...")
 		
-		Global.change_map()
-		pass # Replace with function body.
+		await get_tree().create_timer(5).timeout
+		Global.load_next_map()
 
 
 func _on_timer_timeout():
