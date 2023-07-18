@@ -1,10 +1,10 @@
 extends Node2D
 
 
-@onready var gun := $gun
-@onready var gun2 := $gun2
-@onready var play := $player
-@onready var play2 := $player2
+@onready var gun := $Guns/gun
+@onready var gun2 := $Guns/gun2
+@onready var play := $Players/player
+@onready var play2 := $Players/player2
 @onready var timer := $timer
 
 var waiting = false
