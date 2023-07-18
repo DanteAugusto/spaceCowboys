@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	if(Global.music_volume != 0):
 		$music.play(Global.music_part)
-		$music.volume_db = Global.music_volume - 20
+		$music.volume_db = Global.music_volume
 
 func _process(delta):
 	if($music.get_playback_position() >= 25):

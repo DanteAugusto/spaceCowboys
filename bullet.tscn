@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=3 uid="uid://bebeekgjyrsax"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_22do8"]
-[ext_resource type="Texture2D" uid="uid://6vpmpmkv4lxx" path="res://assets/Sprite Pack 2/Sprite Pack 2/8 - Comrade Cheese Puff/Missile (16 x 8).png" id="1_bimyb"]
+[ext_resource type="Texture2D" uid="uid://dwaavkri5hrai" path="res://assets/bullet.png" id="2_5uxei"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oyyhi"]
 size = Vector2(8, 14)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vrd2m"]
-atlas = ExtResource("1_bimyb")
-region = Rect2(0, 0, 16, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm4kx"]
+atlas = ExtResource("2_5uxei")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mnmmx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vrd2m")
+"texture": SubResource("AtlasTexture_wm4kx")
 }],
 "loop": true,
 "name": &"default",
@@ -34,7 +34,7 @@ shape = SubResource("RectangleShape2D_oyyhi")
 [node name="missile" type="AnimatedSprite2D" parent="."]
 light_mask = 7
 visibility_layer = 7
-rotation = 1.5708
+position = Vector2(-12, -8)
 scale = Vector2(1.126, 1)
 sprite_frames = SubResource("SpriteFrames_mnmmx")
 

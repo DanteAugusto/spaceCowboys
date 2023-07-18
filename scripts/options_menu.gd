@@ -1,9 +1,12 @@
 extends Control
 
 func _ready():
+	$panel/VBoxContainer/HSlider.value = Global.music_volume
+	$panel/VBoxContainer/curr_volume.text = str(Global.music_volume)
+	
 	if(Global.music_volume != 0):
 		$music.play(Global.music_part)
-		$music.volume_db = Global.music_volume - 20
+		$music.volume_db = Global.music_volume 
 
 func _process(delta):
 	if($music.get_playback_position() >= 25):
@@ -12,12 +15,15 @@ func _process(delta):
 
 func adjust_volume(volume):
 	$panel/VBoxContainer/curr_volume.text = str(volume)
+	Global.music_volume = volume/10
 	
-	if(volume == 0):
+	if(Global.music_volume == 0):
+		Global.music_part = $music.get_playback_position()
 		$music.stop()
 	
-	Global.music_volume = volume
-	$music.volume_db = Global.music_volume - 20
+	if(Global.music_volume != 0):
+		$music.play(Global.music_part)
+		$music.volume_db = Global.music_volume 
 	
 
 func _input(event):

@@ -6,6 +6,7 @@ extends Node2D
 @onready var play := $Players/player
 @onready var play2 := $Players/player2
 @onready var timer := $timer
+@onready var music := $music
 
 var waiting = false
 var playAlive := true
@@ -19,6 +20,9 @@ func _ready():
 	play2.initialize(1)
 	timer.one_shot = false
 	timer.start(10)
+	if(Global.music_volume != 0):
+		music.play(Global.battle_part)
+		music.volume_db = Global.music_volume - 60
 
 
 # Posiciona as armas ao lado dos players
@@ -27,6 +31,8 @@ func _process(delta):
 		gun.global_position = play.global_position
 	if(play2Alive):
 		gun2.global_position = play2.global_position
+	if(music.get_playback_position() < 32):
+		music.play(Global.battle_part)
 
 		
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkt83h8qpll36"]
+[gd_scene load_steps=27 format=3 uid="uid://dkt83h8qpll36"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_j1rmr"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_dtt8n"]
 [ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_kjf2h"]
-[ext_resource type="PackedScene" uid="uid://cmjin6jhhggpj" path="res://cactus2.tscn" id="5_5geuh"]
+[ext_resource type="PackedScene" path="res://cactus2.tscn" id="5_5geuh"]
 [ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="5_2610h"]
 [ext_resource type="Script" path="res://gun.gd" id="5_fmp44"]
 [ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="6_4npf8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="8_4ljiu"]
 [ext_resource type="PackedScene" uid="uid://csdtlhv63jllu" path="res://player.tscn" id="8_cgufk"]
 [ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="9_sh4cm"]
+[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="14_chnr7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_1n72f"]
 tile_data = PackedInt32Array(0, 65538, 0)
@@ -1235,6 +1236,9 @@ position = Vector2(26, -1)
 scale = Vector2(0.25, 0.25)
 
 [node name="timer" type="Timer" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_chnr7")
 
 [connection signal="round_ended" from="." to="." method="_on_round_ended"]
 [connection signal="is_dead" from="Players/player" to="." method="_on_player_is_dead"]

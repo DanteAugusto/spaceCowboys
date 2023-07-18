@@ -18,7 +18,7 @@ signal p2_ready
 func _ready():
 	if(Global.music_volume != 0):
 		$"../music".play(Global.music_part)
-		$"../music".volume_db = Global.music_volume - 20
+		$"../music".volume_db = Global.music_volume
 
 func _process(delta):
 	if($"../music".get_playback_position() >= 25):
@@ -95,7 +95,5 @@ func go_to_next_scene():
 	if(p_ready >= 2): 
 		Global.player1Dir = p1_selected
 		Global.player2Dir = p2_selected
-		print(Global.player1Dir)
-		print(Global.player2Dir)
-		Global.change_scene("res://scenes/map_1.tscn")
+		Global.begin_play()
 		

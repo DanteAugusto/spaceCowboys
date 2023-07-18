@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dw120yph6edh6"]
+[gd_scene load_steps=26 format=3 uid="uid://bpaodgufek1bi"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_hlwrd"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_snniu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://gun.gd" id="10_u3tya"]
 [ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="11_yjqud"]
 [ext_resource type="Script" path="res://gun2.gd" id="12_k67ah"]
+[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="13_ylp74"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_1n72f"]
 tile_data = PackedInt32Array(0, 65538, 0)
@@ -1235,6 +1236,9 @@ position = Vector2(26, -1)
 scale = Vector2(0.25, 0.25)
 
 [node name="timer" type="Timer" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ylp74")
 
 [connection signal="round_ended" from="." to="." method="_on_round_ended"]
 [connection signal="is_dead" from="Players/player" to="." method="_on_player_is_dead"]
