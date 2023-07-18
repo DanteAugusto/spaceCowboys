@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2itu6o6kd8ha"]
+[gd_scene load_steps=3 format=3 uid="uid://c2itu6o6kd8ha"]
 
 [ext_resource type="Script" path="res://cactus.gd" id="1_uv6hf"]
-[ext_resource type="Texture2D" uid="uid://crdwsa8u0snhh" path="res://assets/Mini FX, Items & UI/Food Items/Burger_&_Fries (16 x 16).png" id="2_bqp4a"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqx1p"]
-size = Vector2(14, 6.5)
+[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="2_tgdb1"]
 
 [node name="cactus" type="Area2D"]
 script = ExtResource("1_uv6hf")
@@ -12,12 +9,11 @@ script = ExtResource("1_uv6hf")
 [node name="cactus" type="Sprite2D" parent="."]
 position = Vector2(0, -6)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_bqp4a")
+texture = ExtResource("2_tgdb1")
 region_enabled = true
-region_rect = Rect2(18.8348, 6.7823, 10.4051, 9.18887)
+region_rect = Rect2(15, 17, 32, 29)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8.75)
-shape = SubResource("RectangleShape2D_uqx1p")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, -25, 8, -25, 8, -18, 15, -18, 23, -8, 23, 4, 13, 13, -13, 13, -22, 4, -22, -11, -14, -18, -9, -18)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

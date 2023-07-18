@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbc2w772kohqx"]
 
 [ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_it3bw"]
-[ext_resource type="Texture2D" uid="uid://bx7xy6fspojjg" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="2_4sx8u"]
+[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="2_fnww5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y26ps"]
 size = Vector2(48, 32)
@@ -13,16 +13,25 @@ script = ExtResource("1_it3bw")
 collision_layer = 2
 
 [node name="sprite_platform" type="Sprite2D" parent="platform"]
-position = Vector2(24, 8)
-texture = ExtResource("2_4sx8u")
+position = Vector2(8, 16)
+rotation = 1.57079
+texture = ExtResource("2_fnww5")
 region_enabled = true
-region_rect = Rect2(48, 16, 48, 16)
+region_rect = Rect2(256, 80, 32, 16)
 
-[node name="sprite_platform2" type="Sprite2D" parent="platform"]
-position = Vector2(24, 24)
-texture = ExtResource("2_4sx8u")
+[node name="sprite_platform3" type="Sprite2D" parent="platform"]
+position = Vector2(40, 16)
+rotation = 4.71238
+texture = ExtResource("2_fnww5")
 region_enabled = true
-region_rect = Rect2(48, 96, 48, 16)
+region_rect = Rect2(256, 80, 32, 16)
+
+[node name="sprite_platform4" type="Sprite2D" parent="platform"]
+position = Vector2(24, 16)
+rotation = 4.71238
+texture = ExtResource("2_fnww5")
+region_enabled = true
+region_rect = Rect2(256, 48, 32, 16)
 
 [node name="collision" type="CollisionShape2D" parent="platform"]
 position = Vector2(24, 16)
