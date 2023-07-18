@@ -1,18 +1,17 @@
-[gd_scene load_steps=26 format=3 uid="uid://dkt83h8qpll36"]
+[gd_scene load_steps=25 format=3 uid="uid://dw120yph6edh6"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_j1rmr"]
-[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_dtt8n"]
-[ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_kjf2h"]
-[ext_resource type="PackedScene" uid="uid://cmjin6jhhggpj" path="res://cactus2.tscn" id="5_5geuh"]
-[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="5_2610h"]
-[ext_resource type="Script" path="res://gun.gd" id="5_fmp44"]
-[ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="6_4npf8"]
-[ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="6_cioup"]
-[ext_resource type="Script" path="res://gun2.gd" id="7_4nhrc"]
-[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="7_q3lls"]
-[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="8_4ljiu"]
-[ext_resource type="PackedScene" uid="uid://csdtlhv63jllu" path="res://player.tscn" id="8_cgufk"]
-[ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="9_sh4cm"]
+[ext_resource type="Script" path="res://level.gd" id="1_hlwrd"]
+[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_snniu"]
+[ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_dn26o"]
+[ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="4_p5f1n"]
+[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="5_17nq4"]
+[ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="6_3mbnq"]
+[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="7_kvodu"]
+[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="8_fl3oc"]
+[ext_resource type="PackedScene" uid="uid://csdtlhv63jllu" path="res://player.tscn" id="9_h4wpr"]
+[ext_resource type="Script" path="res://gun.gd" id="10_u3tya"]
+[ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="11_yjqud"]
+[ext_resource type="Script" path="res://gun2.gd" id="12_k67ah"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_1n72f"]
 tile_data = PackedInt32Array(0, 65538, 0)
@@ -24,7 +23,7 @@ tile_data = PackedInt32Array(0, 4, 1)
 tile_data = PackedInt32Array(0, 65539, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hepf"]
-texture = ExtResource("5_2610h")
+texture = ExtResource("5_17nq4")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -330,6 +329,7 @@ texture = ExtResource("5_2610h")
 12:4/1/transpose = true
 12:4/1/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:4/1/physics_layer_0/angular_velocity = 0.0
+12:4/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:4/3 = 3
 12:4/3/flip_h = true
 12:4/3/transpose = true
@@ -1105,7 +1105,7 @@ texture = ExtResource("5_2610h")
 16:17/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhunu"]
-texture = ExtResource("6_cioup")
+texture = ExtResource("6_3mbnq")
 margins = Vector2i(1, 1)
 1:0/size_in_atlas = Vector2i(2, 3)
 1:0/0 = 0
@@ -1113,7 +1113,7 @@ margins = Vector2i(1, 1)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76hjl"]
-texture = ExtResource("7_q3lls")
+texture = ExtResource("7_kvodu")
 margins = Vector2i(0, 14)
 1:0/size_in_atlas = Vector2i(2, 2)
 1:0/0 = 0
@@ -1121,7 +1121,7 @@ margins = Vector2i(0, 14)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6fmx"]
-texture = ExtResource("8_4ljiu")
+texture = ExtResource("8_fl3oc")
 margins = Vector2i(15, 0)
 0:1/size_in_atlas = Vector2i(2, 2)
 0:1/0 = 0
@@ -1139,7 +1139,7 @@ pattern_1 = SubResource("TileMapPattern_xubii")
 pattern_2 = SubResource("TileMapPattern_q4lyf")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1rvhv"]
-atlas = ExtResource("6_4npf8")
+atlas = ExtResource("11_yjqud")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h2pu1"]
@@ -1154,7 +1154,7 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lb5de"]
-atlas = ExtResource("6_4npf8")
+atlas = ExtResource("11_yjqud")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsmwr"]
@@ -1169,48 +1169,48 @@ animations = [{
 }]
 
 [node name="level2" type="Node2D"]
-script = ExtResource("1_j1rmr")
+script = ExtResource("1_hlwrd")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(340, 192)
 scale = Vector2(2.125, 2.13333)
-texture = ExtResource("2_dtt8n")
+texture = ExtResource("2_snniu")
 
 [node name="background2" type="Sprite2D" parent="."]
 position = Vector2(340, 180.844)
 scale = Vector2(2.36111, 1.95342)
-texture = ExtResource("3_kjf2h")
+texture = ExtResource("3_dn26o")
 
 [node name="Cactus" type="Node2D" parent="."]
 
-[node name="cactus" parent="Cactus" instance=ExtResource("9_sh4cm")]
-visible = false
+[node name="cactus" parent="Cactus" instance=ExtResource("4_p5f1n")]
 position = Vector2(336, 204)
 scale = Vector2(0.5, 0.5)
 
-[node name="cactus2" parent="Cactus" instance=ExtResource("5_5geuh")]
-position = Vector2(328, 32)
-rotation = -3.14159
+[node name="cactus2" parent="Cactus" instance=ExtResource("4_p5f1n")]
+position = Vector2(336, 164)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_ncu3n")
 format = 2
 layer_0/name = "terrain"
-layer_0/tile_data = PackedInt32Array(1507329, 458753, 0, 1507337, 262145, 6, 1507338, 458753, 8, 1507357, 1048577, 6, 1507358, 262145, 6, 1507359, 458753, 8, 1507360, 1114113, 6, 1507368, 1, 0, 1507369, 393217, 6, 1507328, 458753, 8, 1507336, 1048577, 6, 851975, 786433, 4, 851974, 786433, 4, 851973, 786433, 4, 852004, 786433, 4, 852003, 786433, 4, 852002, 786433, 4, 1441792, 458753, 0, 0, 327681, 9, 20, 131073, 5, 19, 1048577, 7, 851968, 1114113, 7, 65536, 458753, 5, 786432, 458753, 2, 786473, 1, 2, 786474, 65537, 2, 852009, 1, 5, 720937, 1, 0, 720938, 65537, 0, 852010, 65537, 5, 655380, 786433, 4, 720915, 786433, 65540, 786451, 786433, 65540, 851987, 786433, 65540, 917524, 786433, 4, 10, 458753, 5, 9, 1, 5, 1441801, 1048577, 6, 1441802, 1114113, 6, 1507339, 1114113, 6, 31, 458753, 5, 41, 262145, 9, 1441823, 1114113, 6, 40, 1, 5, 65577, 1, 5, 1441833, 1, 0, 30, 1, 5, 21, 458753, 5, 1, 458753, 5, 1507370, 65537, 4, 1441834, 65537, 0, 42, 65537, 4, 65578, 65537, 5, 1441822, 1048577, 6, 720917, 786433, 196612, 786453, 786433, 196612, 851989, 786433, 196612, 720896, 1114113, 6, 1310735, 786433, 4, 196612, 786433, 4, 262180, 786433, 4, 393242, 786433, 4, 1245223, 786433, 4, 1179651, 786433, 4, 1179675, 786433, 4, 327692, 786433, 4, 1114121, 786433, 4, 196624, 786433, 4, 1441814, 786433, 4)
+layer_0/tile_data = PackedInt32Array(196613, 786433, 4, 196614, 786433, 4, 196615, 786433, 4, 65546, 786433, 4, 65547, 786433, 4, 65548, 786433, 4, 131088, 786433, 4, 65555, 786433, 4, 65556, 1048577, 2, 131098, 786433, 4, 131099, 786433, 4, 65568, 786433, 4, 196644, 786433, 4, 393255, 786433, 196612, 458791, 786433, 196612, 524327, 786433, 196612, 589863, 786433, 196612, 852007, 786433, 196612, 917543, 786433, 196612, 983079, 786433, 196612, 1179685, 786433, 4, 1245220, 786433, 4, 1245219, 786433, 4, 1245218, 786433, 4, 1245217, 786433, 4, 1376288, 786433, 4, 1376287, 786433, 4, 1376286, 786433, 4, 1376285, 786433, 4, 1114141, 786433, 196612, 1048605, 786433, 196612, 983069, 786433, 196612, 720926, 786433, 196612, 655390, 786433, 196612, 786462, 786433, 196612, 458781, 786433, 196612, 393245, 786433, 196612, 327709, 786433, 196612, 458777, 786433, 4, 458776, 786433, 4, 262164, 1048577, 3, 262165, 1114113, 3, 458769, 786433, 4, 458768, 786433, 4, 983056, 786433, 4, 983057, 786433, 4, 589844, 1048577, 5, 589845, 1114113, 5, 851989, 1114113, 0, 851988, 1048577, 0, 983064, 786433, 4, 983065, 786433, 4, 1310744, 786433, 4, 1310745, 786433, 4, 1310746, 786433, 4, 1310747, 786433, 4, 1179668, 1048577, 4, 1179669, 1114113, 4, 1310734, 786433, 4, 1310735, 786433, 4, 1310736, 786433, 4, 1310737, 786433, 4, 1376268, 786433, 4, 1376267, 786433, 4, 1376265, 786433, 4, 1114124, 786433, 65540, 1048588, 786433, 65540, 983052, 786433, 65540, 786443, 786433, 65540, 720907, 786433, 65540, 655371, 786433, 65540, 458764, 786433, 65540, 393228, 786433, 65540, 327692, 786433, 65540, 393218, 786433, 65540, 458754, 786433, 65540, 524290, 786433, 65540, 589826, 786433, 65540, 655362, 786433, 65540, 851970, 786433, 65540, 917506, 786433, 65540, 983042, 786433, 65540, 1048578, 786433, 65540, 1245189, 786433, 4, 1048615, 786433, 196612, 1507329, 786433, 4, 1507330, 786433, 4, 1507333, 786433, 4, 1507337, 786433, 4, 1507338, 786433, 4, 1507339, 786433, 4, 1507340, 786433, 4, 1507341, 786433, 4, 1507342, 786433, 4, 1507343, 786433, 4, 1507344, 786433, 4, 1507345, 786433, 4, 1507346, 786433, 4, 1507347, 786433, 4, 1507348, 786433, 4, 1507349, 786433, 4, 1507350, 786433, 4, 1507351, 786433, 4, 1507352, 786433, 4, 1507353, 786433, 4, 1507354, 786433, 4, 1507355, 786433, 4, 1507356, 786433, 4, 1507357, 786433, 4, 1507358, 786433, 4, 1507359, 786433, 4, 1507360, 786433, 4, 1507361, 786433, 4, 1507362, 786433, 4, 1507363, 786433, 4, 1507364, 786433, 4, 1507365, 786433, 4, 1507366, 786433, 4, 1507367, 786433, 4, 1507368, 786433, 4, 1507369, 786433, 4, 1507328, 458753, 8, 1507370, 786433, 4, 1507331, 786433, 4, 1507332, 786433, 4, 1507334, 786433, 4, 1507335, 786433, 4, 1507336, 786433, 4, 1245204, 1048577, 1, 1310740, 1048577, 2, 1376276, 1048577, 3, 1441812, 1048577, 4, 1245205, 1114113, 1, 1310741, 1114113, 2, 1376277, 1114113, 3, 1441813, 1114113, 4, 917524, 1048577, 1, 983060, 1048577, 1, 1048596, 1048577, 2, 1114132, 1048577, 3, 917525, 1114113, 1, 983061, 1114113, 1, 1048597, 1114113, 2, 1114133, 1114113, 3, 393236, 1048577, 1, 458772, 1048577, 2, 524308, 1048577, 3, 393237, 1114113, 1, 458773, 1114113, 2, 524309, 1114113, 3, 131092, 1048577, 3, 196628, 1048577, 4, 327700, 1048577, 4, 131093, 1114113, 3, 196629, 1114113, 4, 327701, 1114113, 4, 20, 1048577, 1, 21, 1114113, 1, 65557, 1114113, 2)
 
 [node name="Players" type="Node2D" parent="."]
 
-[node name="player" parent="Players" instance=ExtResource("8_cgufk")]
-position = Vector2(104, 200)
+[node name="player" parent="Players" instance=ExtResource("9_h4wpr")]
+position = Vector2(92, 32)
 
-[node name="player2" parent="Players" instance=ExtResource("8_cgufk")]
-position = Vector2(568, 200)
+[node name="player2" parent="Players" instance=ExtResource("9_h4wpr")]
+position = Vector2(548, 294)
 
 [node name="Guns" type="Node2D" parent="."]
 
 [node name="gun" type="Node2D" parent="Guns"]
 position = Vector2(112, 20)
-script = ExtResource("5_fmp44")
+script = ExtResource("10_u3tya")
 
 [node name="lock" type="Marker2D" parent="Guns/gun"]
 position = Vector2(21, -1)
@@ -1223,7 +1223,7 @@ sprite_frames = SubResource("SpriteFrames_h2pu1")
 
 [node name="gun2" type="Node2D" parent="Guns"]
 position = Vector2(556, 280)
-script = ExtResource("7_4nhrc")
+script = ExtResource("12_k67ah")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guns/gun2"]
 position = Vector2(20, -1)

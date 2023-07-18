@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://pp6grj07nnho"]
+
+[ext_resource type="Script" path="res://cactus.gd" id="1_vixrr"]
+[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="2_7abjm"]
+
+[node name="cactus" type="Area2D"]
+script = ExtResource("1_vixrr")
+
+[node name="cactus" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_7abjm")
+region_enabled = true
+region_rect = Rect2(26, 14, 12, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(3, 4)
+polygon = PackedVector2Array(-10, -28, -6, -33, 0, -33, 4, -28, 4, 9, 0, 13, -5, 13, -10, 9)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
