@@ -10,6 +10,9 @@ var player2Dir # Animaçõa player 2
 var dirLevels = [] # Vetor com os caminhos para os levels
 var qntLevels = 2 # Quantidade de levels existentes
 var currMap = 0
+var music_part = 0.0 
+var music_volume = 1
+var battle_part = 32.0
 
 # Função chamada no início de tudo
 func _ready():

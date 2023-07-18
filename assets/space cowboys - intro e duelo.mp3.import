@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cly51h72mugnh"
+path="res://.godot/imported/space cowboys - intro e duelo.mp3-887ab3fce42f77d66a30c18cb0b14149.mp3str"
+
+[deps]
+
+source_file="res://assets/space cowboys - intro e duelo.mp3"
+dest_files=["res://.godot/imported/space cowboys - intro e duelo.mp3-887ab3fce42f77d66a30c18cb0b14149.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

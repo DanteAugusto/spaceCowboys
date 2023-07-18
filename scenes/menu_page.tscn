@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpcuqw1stt81y"]
+[gd_scene load_steps=5 format=3 uid="uid://dpcuqw1stt81y"]
 
 [ext_resource type="Script" path="res://scripts/menu_page.gd" id="1_k2v4l"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_3xkv7"]
 [ext_resource type="FontFile" uid="uid://conbt31x0xbxd" path="res://assets/at01.ttf" id="3_63c07"]
+[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="4_28204"]
 
 [node name="menu_page" type="Control"]
 layout_mode = 3
@@ -10,16 +11,16 @@ anchors_preset = 0
 script = ExtResource("1_k2v4l")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(320, 160)
-scale = Vector2(2, 1.77778)
+position = Vector2(340, 192)
+scale = Vector2(2.125, 2.13333)
 texture = ExtResource("2_3xkv7")
 
 [node name="title" type="Label" parent="."]
 layout_mode = 0
-offset_left = 248.0
-offset_top = 64.0
-offset_right = 391.0
-offset_bottom = 128.0
+offset_left = 281.0
+offset_top = 104.0
+offset_right = 424.0
+offset_bottom = 174.0
 theme_override_colors/font_color = Color(0.878431, 0.282353, 0.0431373, 1)
 theme_override_colors/font_shadow_color = Color(0.560784, 0.180392, 0.027451, 1)
 theme_override_fonts/font = ExtResource("3_63c07")
@@ -31,39 +32,43 @@ vertical_alignment = 1
 
 [node name="start_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 208.0
-offset_right = 260.0
-offset_bottom = 232.0
+offset_left = 253.0
+offset_top = 248.0
+offset_right = 293.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("3_63c07")
 text = "START"
 
 [node name="options_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 268.0
-offset_top = 208.0
-offset_right = 316.0
-offset_bottom = 232.0
+offset_left = 301.0
+offset_top = 248.0
+offset_right = 349.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("3_63c07")
 text = "OPTIONS"
 
 [node name="credits_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 324.0
-offset_top = 208.0
-offset_right = 372.0
-offset_bottom = 232.0
+offset_left = 357.0
+offset_top = 248.0
+offset_right = 405.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("3_63c07")
 text = "CREDITS"
 
 [node name="exit_button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 380.0
-offset_top = 208.0
-offset_right = 420.0
-offset_bottom = 232.0
+offset_left = 413.0
+offset_top = 248.0
+offset_right = 453.0
+offset_bottom = 272.0
 theme_override_fonts/font = ExtResource("3_63c07")
 text = "EXIT"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_28204")
+mix_target = 1
 
 [connection signal="pressed" from="start_button" to="." method="start_game"]
 [connection signal="pressed" from="options_button" to="." method="options_page"]

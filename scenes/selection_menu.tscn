@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvaw6hkhfjcu4"]
+[gd_scene load_steps=11 format=3 uid="uid://bvaw6hkhfjcu4"]
 
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="1_qs1la"]
 [ext_resource type="Script" path="res://scripts/selection.gd" id="2_1lrxc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0jtbdc0pvo4u" path="res://assets/Cowboys Sprite/Robo Pumpkin/Robo Pumpkin - Idle.png" id="5_hctiu"]
 [ext_resource type="Texture2D" uid="uid://clwmcxogy6pkt" path="res://assets/select-2.png" id="5_ir3fv"]
 [ext_resource type="Texture2D" uid="uid://dyv6a54kwtmwk" path="res://assets/Cowboys Sprite/Robo Totem/Robo Totem - Idle.png" id="6_p0l2j"]
+[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="10_sbbxu"]
 
 [node name="selection_menu" type="Control"]
 layout_mode = 3
@@ -19,16 +20,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(320, 160)
-scale = Vector2(2, 1.77778)
+position = Vector2(340, 192)
+scale = Vector2(2.125, 2.13333)
 texture = ExtResource("1_qs1la")
 
 [node name="panel" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 608.0
-offset_bottom = 288.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 640.0
+offset_bottom = 320.0
 script = ExtResource("2_1lrxc")
 
 [node name="title" type="Label" parent="panel"]
@@ -232,6 +233,9 @@ theme_override_font_sizes/font_size = 7
 text = "Player 2"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_sbbxu")
 
 [connection signal="p1_ready" from="panel" to="panel" method="go_to_next_scene"]
 [connection signal="p2_ready" from="panel" to="panel" method="go_to_next_scene"]

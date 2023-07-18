@@ -15,6 +15,16 @@ var p_ready = 0
 signal p1_ready
 signal p2_ready
 
+func _ready():
+	if(Global.music_volume != 0):
+		$"../music".play(Global.music_part)
+		$"../music".volume_db = Global.music_volume - 20
+
+func _process(delta):
+	if($"../music".get_playback_position() >= 25):
+		Global.music_part = 0.0
+		$"../music".play(Global.music_part)
+
 func _input(event):
 	if event is InputEventKey:
 		if p1_selected == null:
@@ -87,5 +97,5 @@ func go_to_next_scene():
 		Global.player2Dir = p2_selected
 		print(Global.player1Dir)
 		print(Global.player2Dir)
-		Global.change_scene("res://scenes/menu_page.tscn")
+		Global.change_scene("res://scenes/map_1.tscn")
 		
