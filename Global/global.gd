@@ -67,9 +67,7 @@ func change_scene(cena):
 # Troca para um novo mapa onde os jogadores irão duelar, ou para a cena final de vitória
 func load_next_map():
 	if gameWinner != 0:
-		gameWinner = 0 # Tirar depois
-		# TODO: Mudar para a cena final de vitória
-		#change_scene(cena)
+		change_scene("res://scenes/final_scene.tscn")
 	else:
 		currMap = (currMap + 1) % dirLevels.size()
 		# Mudar para um mapa que os jogadores ainda não visitaram
