@@ -4,6 +4,7 @@ extends Node2D
 @onready var control = -1
 @onready var sprite := $Sprite2D
 @onready var gun := $Sprite2D/lock
+@onready var ammoVisual := $Sprite2D/ammo
 
 var inverted = false
 
@@ -49,10 +50,20 @@ func fire():
 	bullet_instance.position = gun.global_position
 	bullet_instance.rotation = rotation + (PI/2)
 	get_tree().get_root().call_deferred("add_child",bullet_instance)
-
+	if ammo == 5:
+		ammoVisual.play("five")
+	elif ammo == 4:
+		ammoVisual.play("four")
+	elif ammo == 3:
+		ammoVisual.play("three")
+	elif ammoVisual.get_animation() == "three":
+		ammoVisual.set_animation("two")
+	elif ammoVisual.get_animation() == "two":
+		ammoVisual.set_animation("one")
 func reload():
 	if !reloading:
 		reloading = true
 		await get_tree().create_timer(RELOAD_TIME).timeout
+		ammoVisual.set_animation("default")
 		ammo = MAX_AMMO
 		reloading = false
