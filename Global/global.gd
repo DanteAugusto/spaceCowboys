@@ -11,7 +11,7 @@ var dirLevels = [] # Vetor com os caminhos para os levels
 var qntLevels = 4 # Quantidade de levels existentes
 var currMap = 0
 var music_part = 0.0 
-var music_volume = 1
+var music_volume = 50
 var battle_part = 32.0
 
 # Função chamada no início de tudo

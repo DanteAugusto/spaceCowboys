@@ -18,7 +18,7 @@ signal p2_ready
 func _ready():
 	if(Global.music_volume != 0):
 		$"../music".play(Global.music_part)
-		$"../music".volume_db = Global.music_volume
+		$"../music".volume_db = Global.music_volume/2 - 35
 
 func _process(delta):
 	if($"../music".get_playback_position() >= 25):

@@ -22,7 +22,7 @@ func _ready():
 	timer.start(10)
 	if(Global.music_volume != 0):
 		music.play(Global.battle_part)
-		music.volume_db = Global.music_volume - 60
+		music.volume_db = Global.music_volume/2 - 35
 
 
 # Posiciona as armas ao lado dos players
@@ -31,9 +31,10 @@ func _process(delta):
 		gun.global_position = play.global_position
 	if(play2Alive):
 		gun2.global_position = play2.global_position
-	if(music.get_playback_position() < 32):
+	if(music.get_playback_position() > 56 && Global.music_volume != 0):
+		Global.battle_part = 32
 		music.play(Global.battle_part)
-
+	print(music.get_playback_position())
 		
 
 func _on_player_is_dead():
@@ -54,6 +55,7 @@ func _on_player_2_is_dead():
 func _on_round_ended():
 	if(!is_round_finished):
 		is_round_finished = true
+		
 		print("Round acabou! O vencedor é...")
 		if(playAlive):
 			print("Player1!")
@@ -66,6 +68,7 @@ func _on_round_ended():
 		print("Indo para a proxima partida...")
 		
 		await get_tree().create_timer(5).timeout
+		Global.battle_part = music.get_playback_position()
 		Global.load_next_map()
 
 
