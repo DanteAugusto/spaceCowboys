@@ -35,9 +35,11 @@ func _process(delta):
 		if angle < -PI/2 || angle > PI/2:
 			inverted = true
 			gun.set_position(Vector2(24, 10.638))
+			ammoVisual.set_position(Vector2(7.539, 13.692))
 		else:
 			inverted = false
 			gun.set_position(Vector2(24, -8))
+			ammoVisual.set_position(Vector2(7.539, -17.926))
 		sprite.set_flip_v(inverted)
 			
 	if Input.is_action_just_pressed("reload") :
@@ -60,6 +62,8 @@ func fire():
 		ammoVisual.set_animation("two")
 	elif ammoVisual.get_animation() == "two":
 		ammoVisual.set_animation("one")
+	elif ammoVisual.get_animation() == "one":
+		ammoVisual.set_animation("zero")
 func reload():
 	if !reloading:
 		reloading = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cc3us1mhdvbi2"]
+[gd_scene load_steps=12 format=3 uid="uid://cc3us1mhdvbi2"]
 
 [ext_resource type="Texture2D" uid="uid://7xwdc3po8gsq" path="res://assets/gun.png" id="1_pqg0s"]
 [ext_resource type="Texture2D" uid="uid://dma3en00e3a2r" path="res://assets/six.png" id="2_76bh4"]
+[ext_resource type="Texture2D" uid="uid://dwaavkri5hrai" path="res://assets/bullet.png" id="3_bm6nt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5dae7"]
 atlas = ExtResource("2_76bh4")
@@ -26,6 +27,10 @@ region = Rect2(0, 0, 32, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_57vjv"]
 atlas = ExtResource("2_76bh4")
 region = Rect2(0, 0, 23, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4rvo"]
+atlas = ExtResource("3_bm6nt")
+region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6aiig"]
 animations = [{
@@ -76,6 +81,14 @@ animations = [{
 "loop": true,
 "name": &"two",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4rvo")
+}],
+"loop": true,
+"name": &"zero",
+"speed": 5.0
 }]
 
 [node name="gun" type="Node2D"]
@@ -94,6 +107,6 @@ scale = Vector2(0.25, 0.25)
 [node name="ammo" type="AnimatedSprite2D" parent="Sprite2D"]
 light_mask = 7
 visibility_layer = 7
-position = Vector2(2.65958, -15.9574)
-scale = Vector2(0.227, 0.137)
+position = Vector2(7.53942, -17.9258)
+scale = Vector2(0.452, 0.269)
 sprite_frames = SubResource("SpriteFrames_6aiig")
