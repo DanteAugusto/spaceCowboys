@@ -150,4 +150,4 @@ visibility_layer = 7
 position = Vector2(7.53942, -17.9258)
 scale = Vector2(0.452, 0.269)
 sprite_frames = SubResource("SpriteFrames_6aiig")
-frame_progress = 0.855249
+frame_progress = 0.794052

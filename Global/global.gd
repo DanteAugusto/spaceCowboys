@@ -17,8 +17,8 @@ var battle_part = 32.0
 # Função chamada no início de tudo
 func _ready():
 	# Salva o caminho dos levels
-	for i in range(qntLevels):
-		dirLevels.append("res://levels/level" + str(i) + ".tscn")
+	# for i in range(qntLevels):
+	#	  dirLevels.append("res://levels/level" + str(i) + ".tscn")
 		
 	reset_scores()
 	currMap = 0
@@ -32,8 +32,14 @@ func instance_node(node, location, parent):
 
 # Função chamada no início de um jogo (depois da seleção de players)
 func begin_play():
+	
+	dirLevels.clear()
+	for i in range(1, qntLevels):
+		dirLevels.append("res://levels/level" + str(i) + ".tscn")
 	# Randomiza a ordem dos mapas
 	dirLevels.shuffle()
+	# Coloca o mapa 0 como primeiro
+	dirLevels.push_front("res://levels/level0.tscn")
 	currMap = 0
 	# Vai para o primeiro mapa
 	change_scene(dirLevels[currMap])

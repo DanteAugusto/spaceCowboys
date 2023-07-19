@@ -1,19 +1,19 @@
 [gd_scene load_steps=23 format=3 uid="uid://myan6vgkdhut"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_i81mx"]
-[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_147r5"]
-[ext_resource type="PackedScene" uid="uid://cbc2w772kohqx" path="res://scenes/moving_platform.tscn" id="2_ly3va"]
-[ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_xer5k"]
-[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="4_k2x0m"]
-[ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="5_0mgx5"]
-[ext_resource type="Script" path="res://gun.gd" id="5_pm72c"]
-[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="6_x3qx4"]
-[ext_resource type="Script" path="res://gun2.gd" id="7_eycf7"]
-[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="7_t5kuv"]
-[ext_resource type="PackedScene" uid="uid://caitrtkxjiqmh" path="res://player.tscn" id="8_p7kuk"]
-[ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="9_2bs3h"]
-[ext_resource type="PackedScene" uid="uid://cc3us1mhdvbi2" path="res://scenes/gun.tscn" id="10_sj0ox"]
-[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="14_m4fte"]
+[ext_resource type="Script" path="res://level.gd" id="1_30by6"]
+[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="1_xmbhw"]
+[ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="2_43fcj"]
+[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="3_350mi"]
+[ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="4_11p1t"]
+[ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="5_14tya"]
+[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="5_a4k23"]
+[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="6_f666k"]
+[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="8_2u6ke"]
+[ext_resource type="PackedScene" uid="uid://cbc2w772kohqx" path="res://scenes/moving_platform.tscn" id="9_iuwgl"]
+[ext_resource type="PackedScene" uid="uid://caitrtkxjiqmh" path="res://player.tscn" id="9_mk8y5"]
+[ext_resource type="PackedScene" uid="uid://cc3us1mhdvbi2" path="res://scenes/gun.tscn" id="9_xd3uk"]
+[ext_resource type="Script" path="res://gun.gd" id="10_rguub"]
+[ext_resource type="Script" path="res://gun2.gd" id="12_g5071"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_1n72f"]
 tile_data = PackedInt32Array(0, 65538, 0)
@@ -25,7 +25,7 @@ tile_data = PackedInt32Array(0, 4, 1)
 tile_data = PackedInt32Array(0, 65539, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hepf"]
-texture = ExtResource("4_k2x0m")
+texture = ExtResource("3_350mi")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1107,7 +1107,7 @@ texture = ExtResource("4_k2x0m")
 16:17/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhunu"]
-texture = ExtResource("5_0mgx5")
+texture = ExtResource("4_11p1t")
 margins = Vector2i(1, 1)
 1:0/size_in_atlas = Vector2i(2, 3)
 1:0/0 = 0
@@ -1115,7 +1115,7 @@ margins = Vector2i(1, 1)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76hjl"]
-texture = ExtResource("6_x3qx4")
+texture = ExtResource("5_a4k23")
 margins = Vector2i(0, 14)
 1:0/size_in_atlas = Vector2i(2, 2)
 1:0/0 = 0
@@ -1123,7 +1123,7 @@ margins = Vector2i(0, 14)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6fmx"]
-texture = ExtResource("7_t5kuv")
+texture = ExtResource("6_f666k")
 margins = Vector2i(15, 0)
 0:1/size_in_atlas = Vector2i(2, 2)
 0:1/0 = 0
@@ -1141,25 +1141,25 @@ pattern_1 = SubResource("TileMapPattern_xubii")
 pattern_2 = SubResource("TileMapPattern_q4lyf")
 
 [node name="World" type="Node2D"]
-script = ExtResource("1_i81mx")
+script = ExtResource("1_30by6")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(340, 192)
 scale = Vector2(2.125, 2.13333)
-texture = ExtResource("2_147r5")
+texture = ExtResource("1_xmbhw")
 
 [node name="background2" type="Sprite2D" parent="."]
 position = Vector2(336, 180.844)
 scale = Vector2(2.33333, 1.95342)
-texture = ExtResource("3_xer5k")
+texture = ExtResource("2_43fcj")
 
 [node name="Cactus" type="Node2D" parent="."]
 
-[node name="cactus" parent="Cactus" instance=ExtResource("9_2bs3h")]
+[node name="cactus" parent="Cactus" instance=ExtResource("5_14tya")]
 position = Vector2(464, 364)
 scale = Vector2(0.5, 0.5)
 
-[node name="cactus2" parent="Cactus" instance=ExtResource("9_2bs3h")]
+[node name="cactus2" parent="Cactus" instance=ExtResource("5_14tya")]
 position = Vector2(192, 364)
 scale = Vector2(0.5, 0.5)
 
@@ -1171,23 +1171,23 @@ layer_0/tile_data = PackedInt32Array(393216, 458753, 2, 458752, 458753, 3, 52428
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="moving_platform" parent="Platforms" instance=ExtResource("2_ly3va")]
+[node name="moving_platform" parent="Platforms" instance=ExtResource("9_iuwgl")]
 position = Vector2(0, 176)
 move_speed = 4.0
 distance = 208
 
-[node name="moving_platform2" parent="Platforms" instance=ExtResource("2_ly3va")]
+[node name="moving_platform2" parent="Platforms" instance=ExtResource("9_iuwgl")]
 position = Vector2(360, 32)
 rotation = 3.14159
 distance = 142
 move_horizontal = false
 
-[node name="moving_platform3" parent="Platforms" instance=ExtResource("2_ly3va")]
+[node name="moving_platform3" parent="Platforms" instance=ExtResource("9_iuwgl")]
 position = Vector2(312, 352)
 distance = 142
 move_horizontal = false
 
-[node name="moving_platform4" parent="Platforms" instance=ExtResource("2_ly3va")]
+[node name="moving_platform4" parent="Platforms" instance=ExtResource("9_iuwgl")]
 position = Vector2(680, 176)
 rotation = 3.14159
 scale = Vector2(1, -1)
@@ -1196,21 +1196,21 @@ distance = 208
 
 [node name="Players" type="Node2D" parent="."]
 
-[node name="player" parent="Players" instance=ExtResource("8_p7kuk")]
+[node name="player" parent="Players" instance=ExtResource("9_mk8y5")]
 position = Vector2(104, 67)
 
-[node name="player2" parent="Players" instance=ExtResource("8_p7kuk")]
+[node name="player2" parent="Players" instance=ExtResource("9_mk8y5")]
 position = Vector2(537, 73)
 
 [node name="Guns" type="Node2D" parent="."]
 
-[node name="gun" parent="Guns" instance=ExtResource("10_sj0ox")]
+[node name="gun" parent="Guns" instance=ExtResource("9_xd3uk")]
 position = Vector2(128, 63)
-script = ExtResource("5_pm72c")
+script = ExtResource("10_rguub")
 
-[node name="gun2" parent="Guns" instance=ExtResource("10_sj0ox")]
+[node name="gun2" parent="Guns" instance=ExtResource("9_xd3uk")]
 position = Vector2(556, 72)
-script = ExtResource("7_eycf7")
+script = ExtResource("12_g5071")
 
 [node name="timer" type="Timer" parent="."]
 
@@ -1220,7 +1220,7 @@ limit_left = 0
 limit_top = 0
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_m4fte")
+stream = ExtResource("8_2u6ke")
 
 [connection signal="round_ended" from="." to="." method="_on_round_ended"]
 [connection signal="is_dead" from="Players/player" to="." method="_on_player_is_dead"]
