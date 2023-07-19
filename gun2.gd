@@ -2,7 +2,10 @@ extends Node2D
 
 @onready var controls = Input.get_connected_joypads()
 @onready var control = -1
-@onready var gun := $lock
+@onready var sprite := $Sprite2D
+@onready var gun := $Sprite2D/lock
+
+var inverted = false
 
 var MAX_AMMO = 6
 var RELOAD_TIME = 1
@@ -27,6 +30,13 @@ func _process(delta):
 	var angle = batata.angle()
 	if(batata[0] >= 0.2 || batata[0] <= -0.2 || batata[1] >= 0.2 || batata[1] <= -0.2):
 		rotation = angle
+		if angle < -PI/2 || angle > PI/2:
+			inverted = true
+			gun.set_position(Vector2(24, 10.638))
+		else:
+			inverted = false
+			gun.set_position(Vector2(24, -8))
+		sprite.set_flip_v(inverted)
 	if Input.is_action_just_pressed("reload") :
 		if control != -1 && Input.is_joy_button_pressed(control, 10) && !reloading && ammo < MAX_AMMO:
 			reload()

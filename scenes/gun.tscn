@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc3us1mhdvbi2"]
+
+[ext_resource type="Texture2D" uid="uid://7xwdc3po8gsq" path="res://assets/gun.png" id="1_pqg0s"]
+
+[node name="gun" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(0.376, 0.376)
+texture = ExtResource("1_pqg0s")
+region_enabled = true
+region_rect = Rect2(2, 17, 48, 31)
+
+[node name="lock" type="Marker2D" parent="Sprite2D"]
+position = Vector2(24, -8)
+scale = Vector2(0.25, 0.25)

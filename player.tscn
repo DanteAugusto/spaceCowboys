@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://csdtlhv63jllu"]
+[gd_scene load_steps=24 format=3 uid="uid://caitrtkxjiqmh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_awrkr"]
 [ext_resource type="Texture2D" uid="uid://dysi4s46ke0o6" path="res://assets/Sprite Pack 2/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_ne66x"]

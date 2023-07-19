@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bpaodgufek1bi"]
+[gd_scene load_steps=22 format=3 uid="uid://bpaodgufek1bi"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_hlwrd"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_snniu"]
@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="6_3mbnq"]
 [ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="7_kvodu"]
 [ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="8_fl3oc"]
-[ext_resource type="PackedScene" uid="uid://csdtlhv63jllu" path="res://player.tscn" id="9_h4wpr"]
+[ext_resource type="PackedScene" uid="uid://caitrtkxjiqmh" path="res://player.tscn" id="9_h4wpr"]
+[ext_resource type="PackedScene" uid="uid://cc3us1mhdvbi2" path="res://scenes/gun.tscn" id="10_5aawt"]
 [ext_resource type="Script" path="res://gun.gd" id="10_u3tya"]
-[ext_resource type="Texture2D" uid="uid://bymq4nmepw0b4" path="res://assets/Mini FX, Items & UI/Food Items/Ice_Cream_Cones (16 x 16).png" id="11_yjqud"]
 [ext_resource type="Script" path="res://gun2.gd" id="12_k67ah"]
 [ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="13_ylp74"]
 
@@ -1139,36 +1139,6 @@ pattern_0 = SubResource("TileMapPattern_1n72f")
 pattern_1 = SubResource("TileMapPattern_xubii")
 pattern_2 = SubResource("TileMapPattern_q4lyf")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1rvhv"]
-atlas = ExtResource("11_yjqud")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h2pu1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1rvhv")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lb5de"]
-atlas = ExtResource("11_yjqud")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nsmwr"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lb5de")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="level2" type="Node2D"]
 script = ExtResource("1_hlwrd")
 
@@ -1209,31 +1179,13 @@ position = Vector2(548, 294)
 
 [node name="Guns" type="Node2D" parent="."]
 
-[node name="gun" type="Node2D" parent="Guns"]
-position = Vector2(112, 20)
+[node name="gun" parent="Guns" instance=ExtResource("10_5aawt")]
+position = Vector2(128, 63)
 script = ExtResource("10_u3tya")
 
-[node name="lock" type="Marker2D" parent="Guns/gun"]
-position = Vector2(21, -1)
-scale = Vector2(0.25, 0.25)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guns/gun"]
-position = Vector2(20, -1)
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_h2pu1")
-
-[node name="gun2" type="Node2D" parent="Guns"]
-position = Vector2(556, 280)
+[node name="gun2" parent="Guns" instance=ExtResource("10_5aawt")]
+position = Vector2(556, 72)
 script = ExtResource("12_k67ah")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Guns/gun2"]
-position = Vector2(20, -1)
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_nsmwr")
-
-[node name="lock" type="Marker2D" parent="Guns/gun2"]
-position = Vector2(26, -1)
-scale = Vector2(0.25, 0.25)
 
 [node name="timer" type="Timer" parent="."]
 
