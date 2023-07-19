@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="2_43fcj"]
 [ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="3_350mi"]
 [ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="4_11p1t"]
-[ext_resource type="PackedScene" uid="uid://pp6grj07nnho" path="res://cactus3.tscn" id="4_q4ebi"]
+[ext_resource type="PackedScene" path="res://cactus3.tscn" id="4_q4ebi"]
 [ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="5_14tya"]
 [ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="5_a4k23"]
 [ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="6_f666k"]

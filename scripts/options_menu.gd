@@ -6,7 +6,7 @@ func _ready():
 	
 	if(Global.music_volume != 0):
 		$music.play(Global.music_part)
-		$music.volume_db = Global.music_volume 
+		$music.volume_db = Global.music_volume/2 - 35
 
 func _process(delta):
 	if($music.get_playback_position() >= 25):
@@ -15,15 +15,17 @@ func _process(delta):
 
 func adjust_volume(volume):
 	$panel/VBoxContainer/curr_volume.text = str(volume)
-	Global.music_volume = volume/10
+	Global.music_volume = volume
 	
 	if(Global.music_volume == 0):
 		Global.music_part = $music.get_playback_position()
 		$music.stop()
 	
-	if(Global.music_volume != 0):
+	elif($music.volume_db == -35 && Global.music_volume != 0):
 		$music.play(Global.music_part)
-		$music.volume_db = Global.music_volume 
+	
+	$music.volume_db = Global.music_volume/2 - 35
+		
 	
 
 func _input(event):
