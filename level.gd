@@ -34,7 +34,6 @@ func _process(delta):
 	if(music.get_playback_position() > 56 && Global.music_volume != 0):
 		Global.battle_part = 32
 		music.play(Global.battle_part)
-	print(music.get_playback_position())
 		
 
 func _on_player_is_dead():

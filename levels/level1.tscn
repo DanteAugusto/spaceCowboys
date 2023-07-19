@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://level.gd" id="1_j1rmr"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_dtt8n"]
 [ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_kjf2h"]
-[ext_resource type="PackedScene" path="res://cactus2.tscn" id="5_5geuh"]
+[ext_resource type="PackedScene" uid="uid://cmjin6jhhggpj" path="res://cactus2.tscn" id="5_5geuh"]
 [ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="5_2610h"]
 [ext_resource type="Script" path="res://gun.gd" id="5_fmp44"]
 [ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="6_cioup"]
