@@ -18,6 +18,7 @@ var reloading = false
 func _ready():
 	if controls.size() > 1:
 		control = controls[1]
+	ammoVisual.set_animation("default")
 		
 
 func _process(delta):
@@ -66,6 +67,7 @@ func fire():
 func reload():
 	if !reloading:
 		reloading = true
+		ammoVisual.set_animation("default")
 		await get_tree().create_timer(RELOAD_TIME).timeout
 		ammo = MAX_AMMO
 		reloading = false

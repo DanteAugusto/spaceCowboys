@@ -1,19 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://dnr52qc0md03x"]
+[gd_scene load_steps=22 format=3 uid="uid://va418j8qkmvb"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_i81mx"]
-[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_147r5"]
-[ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_xer5k"]
-[ext_resource type="PackedScene" uid="uid://pp6grj07nnho" path="res://cactus3.tscn" id="4_3vtql"]
-[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="4_k2x0m"]
-[ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="5_0mgx5"]
-[ext_resource type="Script" path="res://gun.gd" id="5_pm72c"]
-[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="6_x3qx4"]
-[ext_resource type="Script" path="res://gun2.gd" id="7_eycf7"]
-[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="7_t5kuv"]
-[ext_resource type="PackedScene" uid="uid://caitrtkxjiqmh" path="res://player.tscn" id="8_p7kuk"]
-[ext_resource type="PackedScene" uid="uid://c2itu6o6kd8ha" path="res://cactus.tscn" id="9_2bs3h"]
-[ext_resource type="PackedScene" uid="uid://cc3us1mhdvbi2" path="res://scenes/gun.tscn" id="10_sj0ox"]
-[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="14_m4fte"]
+[ext_resource type="Script" path="res://level.gd" id="1_br64w"]
+[ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_5yvmw"]
+[ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_ufler"]
+[ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="6_2ohtc"]
+[ext_resource type="PackedScene" uid="uid://cbc2w772kohqx" path="res://scenes/moving_platform.tscn" id="6_gi0jf"]
+[ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="7_wij8t"]
+[ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="8_j7k0i"]
+[ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="9_hpvhx"]
+[ext_resource type="PackedScene" uid="uid://caitrtkxjiqmh" path="res://player.tscn" id="10_iqlse"]
+[ext_resource type="PackedScene" uid="uid://cc3us1mhdvbi2" path="res://scenes/gun.tscn" id="11_cnwko"]
+[ext_resource type="Script" path="res://gun.gd" id="12_g1t54"]
+[ext_resource type="Script" path="res://gun2.gd" id="13_5nna7"]
+[ext_resource type="AudioStream" uid="uid://cly51h72mugnh" path="res://assets/space cowboys - intro e duelo.mp3" id="14_jorg1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_1n72f"]
 tile_data = PackedInt32Array(0, 65538, 0)
@@ -25,7 +24,7 @@ tile_data = PackedInt32Array(0, 4, 1)
 tile_data = PackedInt32Array(0, 65539, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hepf"]
-texture = ExtResource("4_k2x0m")
+texture = ExtResource("6_2ohtc")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -42,10 +41,16 @@ texture = ExtResource("4_k2x0m")
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/next_alternative_id = 2
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/1 = 1
+4:0/1/flip_v = true
+4:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/1/physics_layer_0/angular_velocity = 0.0
+4:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1083,7 +1088,7 @@ texture = ExtResource("4_k2x0m")
 16:17/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhunu"]
-texture = ExtResource("5_0mgx5")
+texture = ExtResource("7_wij8t")
 margins = Vector2i(1, 1)
 1:0/size_in_atlas = Vector2i(2, 3)
 1:0/0 = 0
@@ -1091,7 +1096,7 @@ margins = Vector2i(1, 1)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76hjl"]
-texture = ExtResource("6_x3qx4")
+texture = ExtResource("8_j7k0i")
 margins = Vector2i(0, 14)
 1:0/size_in_atlas = Vector2i(2, 2)
 1:0/0 = 0
@@ -1099,7 +1104,7 @@ margins = Vector2i(0, 14)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m6fmx"]
-texture = ExtResource("7_t5kuv")
+texture = ExtResource("9_hpvhx")
 margins = Vector2i(15, 0)
 0:1/size_in_atlas = Vector2i(2, 2)
 0:1/0 = 0
@@ -1117,60 +1122,111 @@ pattern_1 = SubResource("TileMapPattern_xubii")
 pattern_2 = SubResource("TileMapPattern_q4lyf")
 
 [node name="level3" type="Node2D"]
-script = ExtResource("1_i81mx")
+script = ExtResource("1_br64w")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(340, 184)
 scale = Vector2(2.125, 2.04444)
-texture = ExtResource("2_147r5")
+texture = ExtResource("2_5yvmw")
 
 [node name="background2" type="Sprite2D" parent="."]
-position = Vector2(336, 176)
-scale = Vector2(2.33333, 1.90684)
-texture = ExtResource("3_xer5k")
+position = Vector2(340, 180.844)
+scale = Vector2(2.36111, 1.95342)
+texture = ExtResource("3_ufler")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_right = 680.0
-offset_bottom = 368.0
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="moving_platform" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(0, 352)
+distance = 256
+
+[node name="moving_platform2" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(672, 32)
+rotation = 3.14159
+distance = 256
+
+[node name="moving_platform8" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(368, 48)
+rotation = 6.28318
+distance = 256
+
+[node name="moving_platform9" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(368, 304)
+rotation = 6.28318
+distance = 256
+
+[node name="moving_platform3" parent="Platforms" instance=ExtResource("6_gi0jf")]
+distance = 256
+
+[node name="moving_platform10" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(304, 80)
+rotation = 3.14159
+distance = 256
+
+[node name="moving_platform4" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(672, 384)
+rotation = 3.14159
+distance = 256
+
+[node name="moving_platform6" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(304, 336)
+rotation = -3.14159
+distance = 256
+
+[node name="moving_platform7" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(0, 288)
+rotation = -1.57079
+move_speed = 1.0
+distance = 48
+
+[node name="moving_platform12" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(640, 288)
+rotation = -1.57079
+move_speed = 1.0
+distance = 48
+
+[node name="moving_platform11" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(32, 96)
+rotation = 1.57079
+move_speed = 1.0
+distance = 48
+
+[node name="moving_platform13" parent="Platforms" instance=ExtResource("6_gi0jf")]
+position = Vector2(672, 96)
+rotation = 1.57079
+move_speed = 1.0
+distance = 48
 
 [node name="Cactus" type="Node2D" parent="."]
-
-[node name="cactus" parent="Cactus" instance=ExtResource("4_3vtql")]
-position = Vector2(631, 364)
-scale = Vector2(0.653, 0.653)
-
-[node name="cactus2" parent="Cactus" instance=ExtResource("9_2bs3h")]
-position = Vector2(456, 316)
-scale = Vector2(0.65, 0.65)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8j4di")
 format = 2
 layer_0/name = "terrain"
-layer_0/tile_data = PackedInt32Array(393216, 458753, 2, 458752, 458753, 3, 524288, 458753, 4, 131072, 458753, 2, 196608, 458753, 3, 262144, 458753, 4, 327680, 458753, 1, 65536, 458753, 1, 0, 458753, 9, 1, 589825, 5, 2, 655361, 5, 3, 720897, 5, 4, 786433, 5, 5, 851969, 5, 6, 917505, 5, 7, 917505, 5, 8, 589825, 5, 9, 655361, 5, 10, 720897, 5, 11, 983041, 5, 18, 524289, 5, 19, 917505, 5, 20, 589825, 5, 21, 655361, 5, 22, 720897, 5, 23, 786433, 5, 24, 851969, 5, 26, 589825, 5, 27, 655361, 5, 28, 720897, 5, 29, 786433, 5, 30, 589825, 5, 31, 655361, 5, 25, 917505, 5, 32, 720897, 5, 33, 786433, 5, 34, 851969, 5, 35, 917505, 5, 36, 655361, 5, 37, 720897, 5, 38, 262145, 7, 262185, 524289, 3, 327721, 524289, 3, 393257, 524289, 3, 458793, 524289, 3, 524329, 524289, 5, 393258, 65537, 2, 458794, 65537, 3, 262186, 65537, 3, 327722, 65537, 4, 42, 327681, 8, 65578, 327681, 8, 524330, 131073, 5, 131071, 393217, 2, 196607, 393217, 3, 262143, 393217, 4, 327679, 393217, 2, 393215, 393217, 3, 458751, 393217, 4, 524287, 393217, 2, 589823, 393217, 3, 65535, 393217, 4, 65574, 524289, 5, 65575, 262145, 7, 131112, 262145, 7, 131111, 524289, 5, 196648, 524289, 5, 39, 589825, 6, 65576, 589825, 6, 40, 327681, 8, 41, 327681, 8, 65577, 327681, 8, 131113, 327681, 8, 131114, 327681, 8, 196649, 262145, 7, 196650, 65537, 3, 720895, 393217, 4, 786431, 393217, 2, 851967, 393217, 3, 917503, 393217, 4, 983039, 393217, 2, 1048575, 393217, 3, 1114111, 393217, 2, 1179647, 393217, 3, 1245183, 393217, 4, 1310719, 393217, 2, 1376255, 393217, 3, 1441791, 786433, 8, 1507327, 262145, 3, 655360, 458753, 1, 720896, 458753, 2, 786432, 458753, 3, 851968, 458753, 4, 917504, 458753, 1, 983040, 458753, 1, 1048576, 458753, 1, 1114112, 458753, 2, 1179648, 458753, 3, 1245184, 458753, 4, 1310720, 589825, 8, 1376256, 458753, 7, 1441792, 262145, 2, 1310721, 589825, 4, 1376257, 655361, 3, 1441793, 327681, 2, 1310722, 589825, 4, 1376258, 655361, 3, 1441794, 327681, 3, 1310723, 589825, 4, 1376259, 524289, 7, 1441795, 786433, 8, 1310724, 458753, 0, 1376260, 458753, 6, 1441796, 393217, 7, 1376261, 589825, 4, 1441797, 917505, 3, 1376262, 458753, 0, 1441798, 458753, 6, 1441799, 589825, 4, 1441800, 458753, 0, 1441813, 1, 0, 1441814, 655361, 4, 1441815, 655361, 4, 1441816, 458753, 0, 917545, 524289, 4, 983081, 524289, 3, 1048617, 524289, 3, 1114153, 524289, 3, 1179689, 524289, 3, 1245225, 524289, 3, 1310761, 524289, 3, 1376297, 524289, 3, 1441833, 524289, 3, 917546, 196609, 0, 983082, 65537, 3, 1048618, 65537, 3, 1114154, 65537, 4, 1179690, 65537, 2, 1245226, 65537, 3, 1310762, 65537, 4, 1376298, 65537, 2, 1441834, 65537, 3, 1572863, 262145, 3, 1507328, 262145, 3, 1507329, 327681, 3, 1507330, 327681, 3, 1507331, 262145, 3, 1507332, 131073, 4, 1507333, 786433, 8, 1507334, 851969, 3, 1507335, 917505, 3, 1507336, 458753, 6, 1507337, 589825, 4, 1507338, 655361, 4, 1507339, 720897, 4, 1507340, 786433, 4, 1507341, 851969, 4, 1507342, 589825, 4, 1507343, 655361, 4, 1507344, 720897, 4, 1507345, 786433, 4, 1507346, 851969, 4, 1507347, 589825, 4, 1507348, 655361, 4, 1507349, 655361, 8, 1507350, 589825, 9, 1507351, 589825, 9, 1507352, 589825, 8, 1507353, 655361, 4, 1310746, 1048577, 0, 1507354, 720897, 4, 1310747, 655361, 4, 1507355, 786433, 4, 1310748, 720897, 4, 1507356, 851969, 4, 1310749, 655361, 4, 1507357, 589825, 4, 1310750, 1114113, 0, 1507358, 655361, 4, 1507359, 720897, 4, 1179680, 1048577, 0, 1507360, 786433, 4, 1179681, 1114113, 0, 1507361, 851969, 4, 1507362, 589825, 4, 1048611, 1048577, 0, 1507363, 655361, 4, 1048612, 1114113, 0, 1507364, 589825, 4, 1507365, 655361, 4, 1507366, 720897, 4, 1507367, 786433, 4, 1507368, 851969, 4, 1507369, 655361, 8, 1507370, 65537, 4, 655359, 393217, 4, 589824, 458753, 1)
+layer_0/tile_data = PackedInt32Array(21, 327681, 9, 20, 262145, 7, 589843, 458753, 5, 655378, 458753, 5, 655383, 1, 5, 589846, 1, 5, 851991, 1, 0, 917526, 1, 0, 917523, 458753, 0, 851986, 458753, 0, 655377, 262145, 65536, 589842, 327681, 9, 524307, 458753, 4, 524310, 1, 3, 589847, 262145, 7, 655384, 262145, 65536, 851992, 131073, 0, 917527, 262145, 6, 983062, 1, 2, 983059, 458753, 4, 917522, 458753, 6, 851985, 262145, 0, 851984, 262145, 0, 917521, 262145, 7, 983058, 262145, 7, 1048595, 458753, 4, 1048598, 1, 2, 983063, 327681, 9, 917528, 327681, 9, 851993, 131073, 0, 655385, 262145, 65536, 589848, 458753, 8, 524311, 458753, 8, 458774, 1, 3, 458771, 458753, 4, 524306, 262145, 6, 589841, 262145, 6, 655376, 262145, 65536, 393238, 1, 3, 458775, 458753, 0, 524312, 458753, 0, 589849, 458753, 0, 655386, 262145, 65536, 393235, 458753, 4, 458770, 1, 0, 524305, 1, 0, 589840, 1, 0, 655375, 262145, 65536, 851983, 262145, 0, 917520, 1, 5, 983057, 1, 5, 1048594, 1, 5, 1114131, 458753, 4, 1114134, 1, 2, 1048599, 458753, 5, 983064, 458753, 5, 917529, 458753, 5, 851994, 131073, 0, 19, 1, 5, 65556, 1, 5, 65557, 983041, 5, 22, 983041, 5, 1507350, 1114113, 6, 1507349, 458753, 8, 1507348, 393217, 6, 1507347, 1048577, 6, 1441812, 1048577, 6, 1441813, 1114113, 6)
 
 [node name="Players" type="Node2D" parent="."]
 
-[node name="player" parent="Players" instance=ExtResource("8_p7kuk")]
-position = Vector2(92, 32)
+[node name="player" parent="Players" instance=ExtResource("10_iqlse")]
+position = Vector2(260, 128)
 
-[node name="player2" parent="Players" instance=ExtResource("8_p7kuk")]
-position = Vector2(548, 294)
+[node name="player2" parent="Players" instance=ExtResource("10_iqlse")]
+position = Vector2(404, 196)
 
 [node name="Guns" type="Node2D" parent="."]
 
-[node name="gun" parent="Guns" instance=ExtResource("10_sj0ox")]
+[node name="gun" parent="Guns" instance=ExtResource("11_cnwko")]
 position = Vector2(128, 63)
-script = ExtResource("5_pm72c")
+script = ExtResource("12_g1t54")
 
-[node name="gun2" parent="Guns" instance=ExtResource("10_sj0ox")]
+[node name="gun2" parent="Guns" instance=ExtResource("11_cnwko")]
 position = Vector2(556, 72)
-script = ExtResource("7_eycf7")
+script = ExtResource("13_5nna7")
 
 [node name="timer" type="Timer" parent="."]
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_m4fte")
+stream = ExtResource("14_jorg1")
 
 [connection signal="round_ended" from="." to="." method="_on_round_ended"]
 [connection signal="is_dead" from="Players/player" to="." method="_on_player_is_dead"]
