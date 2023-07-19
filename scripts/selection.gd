@@ -81,6 +81,20 @@ func _input(event):
 						player1 = mr_mochi
 			elif event.is_action_pressed("accept") && Input.is_joy_button_pressed(control1,0):
 				p1_selected = player1 
+				if player1 == player2:
+					clear_p2()
+					if player2 == mr_mochi:
+						select($onion/p2)
+						player2 = onion
+					elif player2 == onion:
+						select($robo_pumpkin/p2)
+						player2 = robo_pumpkin
+					elif player2 == robo_pumpkin:
+						select($robo_totem/p2)
+						player2 = robo_totem
+					elif player2 == robo_totem:
+						select($mrmochi/p2)
+						player2 = mr_mochi
 				p1_ready.emit()	
 		if p2_selected == null:
 			if event.is_action_pressed("right") && Input.is_joy_button_pressed(control2,14):
@@ -129,6 +143,20 @@ func _input(event):
 						player2 = mr_mochi
 			elif event.is_action_pressed("accept") && Input.is_joy_button_pressed(control2,0):
 				p2_selected = player2 
+				if player1 == player2:
+					clear_p1()
+					if player1 == mr_mochi:
+						select($onion/p1)
+						player1 = onion
+					elif player1 == onion:
+						select($robo_pumpkin/p1)
+						player1 = robo_pumpkin
+					elif player1 == robo_pumpkin:
+						select($robo_totem/p1)
+						player1 = robo_totem
+					elif player1 == robo_totem:
+						select($mrmochi/p1)
+						player1 = mr_mochi
 				p2_ready.emit()
 func clear_p1():
 	$mrmochi/p1.visible = false
