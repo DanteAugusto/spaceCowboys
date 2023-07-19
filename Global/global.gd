@@ -17,8 +17,8 @@ var battle_part = 32.0
 # Função chamada no início de tudo
 func _ready():
 	# Salva o caminho dos levels
-	# for i in range(qntLevels):
-	#	  dirLevels.append("res://levels/level" + str(i) + ".tscn")
+	for i in range(qntLevels):
+		dirLevels.append("res://levels/level" + str(i) + ".tscn")
 		
 	reset_scores()
 	currMap = 0

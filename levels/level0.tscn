@@ -1,12 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://dnr52qc0md03x"]
+[gd_scene load_steps=26 format=3 uid="uid://dnr52qc0md03x"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_i81mx"]
 [ext_resource type="Texture2D" uid="uid://tls7xyloyxth" path="res://assets/background-menu-2.png" id="2_147r5"]
 [ext_resource type="Texture2D" uid="uid://b25pphde6uu3w" path="res://assets/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="3_xer5k"]
 [ext_resource type="PackedScene" uid="uid://pp6grj07nnho" path="res://cactus3.tscn" id="4_3vtql"]
+[ext_resource type="Texture2D" uid="uid://cjr51kwg4slmi" path="res://assets/arrow2.png" id="4_5xov3"]
 [ext_resource type="Texture2D" uid="uid://lnrc601771sr" path="res://assets/TileSet/1 Tiles/Tileset.png" id="4_k2x0m"]
 [ext_resource type="Texture2D" uid="uid://d2prnfp2qhwj4" path="res://assets/cactus-1.png" id="5_0mgx5"]
+[ext_resource type="Texture2D" uid="uid://dgq4taldydgxf" path="res://assets/skull.png" id="5_is1u0"]
 [ext_resource type="Script" path="res://gun.gd" id="5_pm72c"]
+[ext_resource type="Texture2D" uid="uid://deobn8jo1pp61" path="res://assets/arrow.png" id="6_feooa"]
 [ext_resource type="Texture2D" uid="uid://dpjd2cps2t1ax" path="res://assets/cactus-2.png" id="6_x3qx4"]
 [ext_resource type="Script" path="res://gun2.gd" id="7_eycf7"]
 [ext_resource type="Texture2D" uid="uid://dvqrj40eey3ku" path="res://assets/cactus-3.png" id="7_t5kuv"]
@@ -1133,6 +1136,83 @@ texture = ExtResource("3_xer5k")
 offset_right = 680.0
 offset_bottom = 368.0
 
+[node name="Label" type="Label" parent="."]
+offset_left = 212.0
+offset_top = 140.0
+offset_right = 454.0
+offset_bottom = 166.0
+text = "WARNING! UNSTABLE GRAVITY!"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 508.0
+offset_top = 316.0
+offset_right = 750.0
+offset_bottom = 342.0
+text = "Don't touch!"
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Arrow3" type="Sprite2D" parent="Sprites"]
+clip_children = 2
+position = Vector2(660, 180)
+scale = Vector2(0.071875, 0.05)
+texture = ExtResource("4_5xov3")
+
+[node name="ColorRect" type="ColorRect" parent="Sprites/Arrow3"]
+offset_left = -222.608
+offset_top = -260.0
+offset_right = 222.392
+offset_bottom = 220.0
+
+[node name="Arrow4" type="Sprite2D" parent="Sprites"]
+clip_children = 2
+position = Vector2(240, 16)
+rotation = -1.57079
+scale = Vector2(0.071875, 0.05)
+texture = ExtResource("4_5xov3")
+
+[node name="ColorRect" type="ColorRect" parent="Sprites/Arrow4"]
+offset_left = -222.608
+offset_top = -260.0
+offset_right = 222.392
+offset_bottom = 220.0
+
+[node name="Skull" type="Sprite2D" parent="Sprites"]
+position = Vector2(632, 180)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_is1u0")
+
+[node name="Skull2" type="Sprite2D" parent="Sprites"]
+position = Vector2(240, 44)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_is1u0")
+
+[node name="Arrow2" type="Sprite2D" parent="Sprites"]
+clip_children = 2
+position = Vector2(608, 344)
+rotation = 2.61799
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_feooa")
+
+[node name="ColorRect2" type="ColorRect" parent="Sprites/Arrow2"]
+offset_left = -474.255
+offset_top = -458.566
+offset_right = 425.745
+offset_bottom = 371.434
+
+[node name="Arrow5" type="Sprite2D" parent="Sprites"]
+clip_children = 2
+position = Vector2(496, 312)
+rotation = -0.523598
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("6_feooa")
+
+[node name="ColorRect2" type="ColorRect" parent="Sprites/Arrow5"]
+offset_left = -474.255
+offset_top = -458.566
+offset_right = 425.745
+offset_bottom = 371.434
+
 [node name="Cactus" type="Node2D" parent="."]
 
 [node name="cactus" parent="Cactus" instance=ExtResource("4_3vtql")]
@@ -1152,10 +1232,10 @@ layer_0/tile_data = PackedInt32Array(393216, 458753, 2, 458752, 458753, 3, 52428
 [node name="Players" type="Node2D" parent="."]
 
 [node name="player" parent="Players" instance=ExtResource("8_p7kuk")]
-position = Vector2(92, 32)
+position = Vector2(32, 312)
 
 [node name="player2" parent="Players" instance=ExtResource("8_p7kuk")]
-position = Vector2(548, 294)
+position = Vector2(528, 280)
 
 [node name="Guns" type="Node2D" parent="."]
 
