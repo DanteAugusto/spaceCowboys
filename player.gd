@@ -12,8 +12,8 @@ extends CharacterBody2D
 @export var gravity := 100
 var ground = 'b'
 
-@onready var animation := $anim as AnimatedSprite2D
-@onready var effects = $Effects
+@onready var animation : AnimatedSprite2D = null
+@onready var effects = null
 
 var MAX_HEALTH = 3
 var IMMUNE_TIME = 1
@@ -29,6 +29,22 @@ signal took_damage
 
 func initialize(n_player):
 	curr_player = n_player
+	if n_player == 0:
+		animation = load(Global.player1Dir).instantiate()
+	else:
+		animation = load(Global.player2Dir).instantiate()
+	add_child(animation)
+	
+	var name =animation.get_name()
+	if name == "onion":
+		effects = $onion/Effects
+	elif name == "mr_mochi":
+		effects = $mr_mochi/Effects
+	elif name == "robo_pumpkin":
+		effects = $robo_pumpkin/Effects
+	elif name == "robo_totem":
+		effects = $robo_totem/Effects
+	
 	if controls.size() > n_player:
 		control = controls[n_player]
 	
@@ -86,9 +102,9 @@ func _physics_process(delta):
 		else:
 			velocity.x = direction * SPEED
 		if is_jumping == true:
-			animation.play("jump")
+			animation.play("jumping")
 		else:
-			animation.play("run")		
+			animation.play("running")		
 		if ground == 'u':
 			if direction > 0:
 				animation.scale.x = -1
@@ -105,7 +121,7 @@ func _physics_process(delta):
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_jumping == true:
-			animation.play("jump")
+			animation.play("jumping")
 		else:
 			animation.play("idle")
 			

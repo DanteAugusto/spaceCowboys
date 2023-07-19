@@ -5,8 +5,8 @@ var ROUNDS_NEEDED_TO_WIN = 3
 var gameWinner = 0
 var roundsPlayer1 = 0 # Quantidade de rounds vencidos player 1
 var roundsPlayer2 = 0 # Quantidade de rounds vencidos player 2
-var player1Dir # Animação player 1
-var player2Dir # Animaçõa player 2
+var player1Dir = "res://players/onion.tscn" # Animação player 1
+var player2Dir = "res://players/robo_pumpkin.tscn" # Animaçõa player 2
 var dirLevels = [] # Vetor com os caminhos para os levels
 var qntLevels = 4 # Quantidade de levels existentes
 var currMap = 0
@@ -23,6 +23,12 @@ func _ready():
 	reset_scores()
 	currMap = 0
 	# begin_play() # <------- DEBUG ONLY !!!!!!!!
+
+func instance_node(node, location, parent):
+	var node_instance = node.instance()
+	parent.add_child(node_instance)
+	node_instance.global_position = location
+	return node_instance
 
 # Função chamada no início de um jogo (depois da seleção de players)
 func begin_play():
