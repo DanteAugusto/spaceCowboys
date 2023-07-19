@@ -56,4 +56,5 @@ func _input(event):
 	if event is InputEvent:
 		if event.is_action_pressed("enter"):
 			Global.music_part = $music.get_playback_position()
+			Global.reset_scores()
 			Global.change_scene("res://scenes/menu_page.tscn")
